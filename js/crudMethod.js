@@ -48,3 +48,11 @@ function deletePokemon(nome){
         }
     }
 }
+
+function verifyAnswer(answer, rightAnswer){
+    if(answer==rightAnswer){
+        return true
+    }else{
+        return false
+    }
+}
