@@ -125,3 +125,17 @@ strong {
     width: 100%;
     height: 2px;
 }
+
+.botoes {
+    display: flex;
+}
+
+#btnVerify {
+    background-color: #6D5F6D;
+    border: 2px solid #665B66;
+    border-radius: 20px;
+    width: 188px;
+    height: 65px;
+
+    /* Estilizando o texto */
+}
