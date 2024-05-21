@@ -25,7 +25,6 @@ img {
 
 label {
     /* Estilizando o texto */
-    /* color: #8095a0; */
     color: #ececec;
     font-family: "Ubuntu", sans-serif;
     font-weight: 800;
@@ -55,7 +54,6 @@ label {
     height: 65px;
     margin: 0 auto;
     margin-top: 30px;
-    /* background-color: #687881; */
     background-color: #131f24;
     text-transform: uppercase;
 }
@@ -121,4 +119,53 @@ input:hover {
 
 .flex {
     display: flex;
+}
+
+#prof {
+    position: absolute;
+    left: 40px;
+    width: 15%;
+    top: 0px;
+}
+
+#bulbasaur {
+    position: absolute;
+    left: 40px;
+    width: 15%;
+    top: 550px;
+}
+
+#charizard {
+    position: absolute;
+    left: 400px;
+    width: 15%;
+    top: 250px;
+}
+
+#snorlax {
+    position: absolute;
+    left: 890px;
+    width: 15%;
+    top: 600px;
+}
+
+#pikachu {
+    position: absolute;
+    right: 150px;
+    width: 15%;
+    top: 550px;
+}
+
+#squirtle {
+    position: absolute;
+    right: 400px;
+    width: 15%;
+    top: 250px;
+}
+
+#lapras {
+    position: absolute;
+    right: 100px;
+    width: 15%;
+    top: -80px;
 }
