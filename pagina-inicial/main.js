@@ -48,3 +48,10 @@ bt_entrar.addEventListener('click', () => {
         window.location.href = "../exercicio_1/indexq1.html"
     }
 })
+
+// adicionando música na home
+let audio = new Audio('../assets/home.mp3');
+window.onload(() => {
+    audio.setVolume(0.5)
+    audio.play();
+})
