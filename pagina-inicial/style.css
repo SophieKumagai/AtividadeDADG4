@@ -132,28 +132,28 @@ input:hover {
     position: absolute;
     left: 40px;
     width: 15%;
-    top: 550px;
+    top: 570px;
 }
 
 #charizard {
     position: absolute;
-    left: 400px;
+    left: 370px;
     width: 15%;
     top: 250px;
 }
 
 #snorlax {
     position: absolute;
-    left: 890px;
+    left: 880px;
     width: 15%;
-    top: 600px;
+    top: 590px;
 }
 
 #pikachu {
     position: absolute;
     right: 150px;
     width: 15%;
-    top: 550px;
+    top: 590px;
 }
 
 #squirtle {
@@ -167,5 +167,5 @@ input:hover {
     position: absolute;
     right: 100px;
     width: 15%;
-    top: -80px;
+    top: -70px;
 }
