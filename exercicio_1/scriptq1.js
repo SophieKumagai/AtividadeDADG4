@@ -1,7 +1,6 @@
 // adicionando som
-
 let audio = new Audio('../assets/batalha.mp3');
-window.onloadstart(() => {
-    audio.setVolume(0.5)
+
+window.addEventListener('load', () => {
     audio.play();
 })

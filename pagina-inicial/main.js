@@ -2,6 +2,7 @@ const nameInp = document.querySelector('#nome')
 const nameMes = document.querySelector('#mensagem')
 const mensagem2 = document.querySelector("#mensagem2")
 const bt_entrar = document.querySelector('#botao_entrar')
+let audio = new Audio('../assets/home.mp3')
 
 // adicionando som
 window.onload = function() {
@@ -45,13 +46,13 @@ bt_entrar.addEventListener('click', () => {
         window.alert("Por favor, adicione o nome e pressione ENTER para salvá-lo!")
     } else {
         // abrir nova página html
-        window.location.href = "../exercicio_1/indexq1.html"
+        audio.pause()
+        window.open("../exercicio_1/indexq1.html", "_self")
+    
     }
 })
 
 // adicionando música na home
-let audio = new Audio('../assets/home.mp3');
-window.onload(() => {
-    audio.setVolume(0.5)
+window.addEventListener('load', () => {
     audio.play();
 })

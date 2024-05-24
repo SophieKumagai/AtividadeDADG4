@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+  }
+  .fadeInText {
+    animation: fadeIn 2s ease-out;
+}
+
+body {
+    background-color: #131f24;
+    user-select: none;
+}
+
+img {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+label {
+    /* Estilizando o texto */
+    color: #ececec;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 300%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#nome {
+    /* Estilizando o texto */
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 200%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #fff;
+    border-radius: 20px;
+    width: 300px;
+    height: 65px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #131f24;
+    text-transform: uppercase;
+}
+
+input {
+    /* Estilizando o texto */
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 200%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #8095a0;
+    border-bottom: #687881 9px solid;
+    border-radius: 20px;
+    width: 300px;
+    height: 65px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #8095a0;
+    text-transform: uppercase;
+}
+
+#comecar:hover {
+    cursor: pointer;
+    background-color: #687881;
+    border-bottom: #8095a0 9px solid;
+    transition: 0.5s;
+}
+
+#mensagem {
+    color: #ffee00;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 150%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    justify-content: center;    
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#mensagem2 {
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 150%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    justify-content: center;    
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.invisivel{
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+#prof {
+    position: absolute;
+    left: 40px;
+    width: 15%;
+    top: 0px;
+}
+
+#bulbasaur {
+    position: absolute;
+    left: 40px;
+    width: 15%;
+    top: 570px;
+}
+
+#charizard {
+    position: absolute;
+    left: 370px;
+    width: 15%;
+    top: 250px;
+}
+
+#snorlax {
+    position: absolute;
+    left: 880px;
+    width: 15%;
+    top: 590px;
+}
+
+#pikachu {
+    position: absolute;
+    right: 50px;
+    width: 15%;
+    top: 590px;
+}
+
+#squirtle {
+    position: absolute;
+    right: 400px;
+    width: 15%;
+    top: 250px;
+}
+
+#lapras {
+    position: absolute;
+    right: 100px;
+    width: 15%;
+    top: -70px;
+}
+
+#comecar {
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    font-size: 200%;
+    font-style: normal;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #8095a0;
+    border-bottom: #687881 9px solid;
+    border-radius: 20px;
+    width: 300px;
+    height: 65px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #8095a0;
+    text-transform: uppercase;
+    padding-top: 20px;
+    margin-top: 180px;
+    cursor: pointer;
+}
