@@ -7,8 +7,26 @@
     }
   }
   .fadeInText {
+    /* Estilizando o texto dentro da box */
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 110%;
+    font-style: normal;
     animation: fadeIn 2s ease-out;
 }
+
+img {
+    user-select: none; /* Para a maioria dos navegadores */
+    -webkit-user-drag: none; /* Para navegadores baseados em WebKit */
+    -moz-user-select: none; /* Para o Firefox */
+    -webkit-user-select: none; /* Para o Safari */
+    -ms-user-select: none; /* Para o Internet Explorer/Edge */
+    pointer-events: none; /* Para impedir a interação com a imagem */
+}
+
 
 body {
   background-color: #131f24;
@@ -36,6 +54,27 @@ body {
   border-radius: 10px;
   background-color: #6d5f6d;
 }
+#pokebola {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  margin: -15px 0 0 150px;
+}
+
+#textVida {
+    /* Estilizando o texto */
+    color: #fff;
+    align-content: center;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-right: 15px;
+}
+
+.pokevida {
+  width: 50px;
+}
 
 .none {
   display: none;
@@ -60,17 +99,7 @@ body {
   border-radius: 15px;
   top: 400px;
   left: 12%;
-
-  /* Estilizando o texto dentro da box */
-  color: #fff;
-  text-align: center;
-  align-content: center;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-size: 110%;
-  font-style: normal;
 }
-
 
 
 .answerLines {
@@ -128,16 +157,21 @@ strong {
   font-style: normal;
 }
 
+/* #returnHead:hover {
+  cursor: pointer;
+} */
+
 #lineFooter {
   background-color: #37464f;
   width: 100%;
   height: 2px;
-  margin-bottom: 2em;
+  margin-bottom: 16px;
 }
 
 
 .botoes {
   display: flex;
+  margin-top: 30px;
 }
 
 #btnVerify {
@@ -159,6 +193,14 @@ strong {
     text-align: center;
 }
 
+#btnVerify:hover {
+    background-color: #7e727e;
+    border-bottom: 8px solid #7e727e;
+    padding-top: 5px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
 #btnSkip {
     margin: 0 auto;
     border: 5px solid #55646C;
@@ -177,17 +219,77 @@ strong {
     text-align: center;
 }
 
-#btnTip {
-    margin: 0 auto;
-    width: 188px;
-    height: 65px;
+#btnSkip:hover {
+    background-color: #1d292e;
+    border: 5px solid #1d292e;
+    border-bottom: 9px solid #1d292e;
+    border-radius: 20px;
+    transition: 500ms;
+    padding-top: 5px;
 
-    /* Estilizando o texto */
-    color: #55646C;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-size: 150%;
-    font-style: normal;
-    align-content: center;
-    text-align: center;
+    cursor: pointer;
 }
+
+#btnTip {
+  margin: 0 auto;
+  width: 188px;
+  height: 65px;
+  border: 5px solid #131f24;
+
+  /* Estilizando o texto */
+  color: #55646C;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 150%;
+  font-style: normal;
+  align-content: center;
+  text-align: center;
+}
+
+#btnTip:hover {
+  background-color: #1d292e;
+  border: 5px solid #1d292e;
+  border-radius: 20px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.alternativasDiv {
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 36%;
+
+}
+
+.alternativa {
+  /* Estilizando as alternativa */
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
+  border-radius: 20px;
+  width: 250px;
+  height: 65px;
+
+  /* Estilizando o texto */
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  font-style: normal;
+  align-content: center;
+  text-align: center;
+}
+
+#alternativa1 {
+  margin: 0 20px 20px 0;
+}
+
+#alternativa4 {
+  margin: 19px 0;
+}
+
+
+#alternativa1:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
+#alternativa2:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
+#alternativa3:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
+#alternativa4:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
