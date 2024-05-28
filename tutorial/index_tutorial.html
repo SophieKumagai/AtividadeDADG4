@@ -9,11 +9,13 @@
 <body>
     <img src="../assets/profOAK.png" alt="professor Oak" id="prof">
     <div id="explicacao">
-        teste
+        <p class="invisivel" id="parte1">Olá, Treinador Pokémon! Recentemente meu time de pesquisa decidiu que vamos criar uma nova PC Box baseada em MongoDB. <br><br> Primeiramente, vamos aprender a buscar registros em sua coleção armazenada na PC Box, ou seja, nosso banco de dados, semelhante à forma como você consulta informações sobre os pokémon. <br><br> Assim como a PC Box armazena uma lista com todos os pokémon capturados e suas características, em MongoDB, você armazena documentos em coleções. Por exemplo, você pode ter uma coleção chamada "pokemons" para guardar as informações sobre todos os seus pokémon, nesse caso cada pokémon é um documento.</p>
+        <p class="invisivel" id="parte2">Para buscar um pokémon específico ou uma característica na sua coleção (como você faria na Pokedéx), você usa uma consulta. Uma consulta é como perguntar à Pokedéx sobre um pokémon específico. <br><br> Vamos entender melhor me ajudando a testar a nova PC Box. Para isso, insira o “Pikachu” com as suas informações de nome, tipo1, tipo2, peso, altura e nível, na coleção “pokemons”. <br><br> Para isso, utilize o comando “InsertOne”: <br> <strong>db.pokemons.insertOne({campo1: valor1, campo2: valor2, ...})</strong></p>
+        <input type="text" name="valor" id="valor" class="invisivel">
     </div>
     <div id="container">
         <div id="voltar" class="bt">Voltar</div>
-        <div id="avancar" class="bt">Avançar</div>
+        <div id="avancar" class="bt2">Avançar</div>
     </div>
 </body>
 </html>

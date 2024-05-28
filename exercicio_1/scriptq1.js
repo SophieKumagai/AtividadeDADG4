@@ -19,7 +19,7 @@ setTimeout(function() {
 
     const iframe = document.createElement("iframe")
     iframe.style.position = "absolute"
-    iframe.style.top = "auto"
+    iframe.style.top = "32%"
     iframe.style.left = "auto"
     iframe.style.width = "100%"
     iframe.style.height = "100%"
