@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
 </head>
 <body>
     <img src="../assets/profOAK.png" alt="professor Oak" id="prof">
     <div id="explicacao">
-        <p class="invisivel" id="parte1">Olá, Treinador Pokémon! Recentemente meu time de pesquisa decidiu que vamos criar uma nova PC Box baseada em MongoDB. <br><br> Primeiramente, vamos aprender a buscar registros em sua coleção armazenada na PC Box, ou seja, nosso banco de dados, semelhante à forma como você consulta informações sobre os pokémon. <br><br> Assim como a PC Box armazena uma lista com todos os pokémon capturados e suas características, em MongoDB, você armazena documentos em coleções. Por exemplo, você pode ter uma coleção chamada "pokemons" para guardar as informações sobre todos os seus pokémon, nesse caso cada pokémon é um documento.</p>
-        <p class="invisivel" id="parte2">Para buscar um pokémon específico ou uma característica na sua coleção (como você faria na Pokedéx), você usa uma consulta. Uma consulta é como perguntar à Pokedéx sobre um pokémon específico. <br><br> Vamos entender melhor me ajudando a testar a nova PC Box. Para isso, insira o “Pikachu” com as suas informações de nome, tipo1, tipo2, peso, altura e nível, na coleção “pokemons”. <br><br> Para isso, utilize o comando “InsertOne”: <br> <strong>db.pokemons.insertOne({campo1: valor1, campo2: valor2, ...})</strong></p>
+        <p class="fadeInText" id="parte1"></p>
+        <p class= "invisivel" id="parte2">Para buscar um pokémon específico ou uma característica na sua coleção (como você faria na Pokedéx), você usa uma consulta. Uma consulta é como perguntar à Pokedéx sobre um pokémon específico. <br><br> Vamos entender melhor me ajudando a testar a nova PC Box. Para isso, insira o “Pikachu” com as suas informações de  nome (pikachu), tipo1 (eletrico), tipo2 (nenhum), peso (6.0), altura (0.4) e nível (2), na coleção “pokemons”. <br><br> Para isso, utilize o comando “InsertOne”: <br> <strong>db.pokemons.insertOne({campo1: valor1, campo2: valor2, ...})</strong></p>
+        <p class="invisivel" id="parte3"></p>
+        <p class="invisivel" id="parte4">Parabéns! Você conseguiu derrotar o Pidgey selvagem!! <br><br> Agora, foi informado que há 2 Torchic do fogo repetidos na PC Box. Para não termos mais pokemons repetidos vamor utilizar o comando "DeleteOne": <br> <strong>db.pokemons.deleteOne({nome: "torchic"})</strong>. </p>
         <input type="text" name="valor" id="valor" class="invisivel">
+        <p class="invisivel" id="parte5">Ótimo!<br>Agora, vamos evoluir o seu Pidgey para Pidgeotto, ou seja, mude o seu nome e suba o seu nível para o 18! Para isso, utilize o seguinte comando: <br> <strong>db.pokemons.updateOne({nome: "pidgey"}, {$set: {nome: "pidgeotto", nivel: 18}})</strong></p>
+        <p class="invisivel" id="parte6"></p>
     </div>
     <div id="container">
-        <div id="voltar" class="bt">Voltar</div>
+        <div id="voltar" class="bt desabilitado">Voltar</div>
         <div id="avancar" class="bt2">Avançar</div>
     </div>
 </body>

@@ -1,238 +1,107 @@
 const listaPokemon = [
-<<<<<<< HEAD
-    {
-=======
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Bulbasaur",
       tipo1: "Planta",
       tipo2: "Veneno",
       peso: "6,9 kg",
-<<<<<<< HEAD
       altura: "0,7 m"
     },
     {
-=======
-      altura: "0,7 m",
-      ataque: 49,
-      defesa: 49,
-      nivel: 5
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Ivysaur",
       tipo1: "Planta",
       tipo2: "Veneno",
       peso: "13,0 kg",
-<<<<<<< HEAD
       altura: "1,0 m"
     },
     {
-=======
-      altura: "1,0 m",
-      ataque: 62,
-      defesa: 63,
-      nivel: 16
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Venusaur",
       tipo1: "Planta",
       tipo2: "Veneno",
       peso: "100,0 kg",
-<<<<<<< HEAD
       altura: "2,0 m"
     },
     {
-=======
-      altura: "2,0 m",
-      ataque: 82,
-      defesa: 83,
-      nivel: 32
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Charmander",
       tipo1: "Fogo",
       tipo2: null,
       peso: "8,5 kg",
-<<<<<<< HEAD
       altura: "0,6 m"
     },
     {
-=======
-      altura: "0,6 m",
-      ataque: 52,
-      defesa: 43,
-      nivel: 5
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Charmeleon",
       tipo1: "Fogo",
       tipo2: null,
       peso: "19,0 kg",
-<<<<<<< HEAD
       altura: "1,1 m"
     },
     {
-=======
-      altura: "1,1 m",
-      ataque: 64,
-      defesa: 58,
-      nivel: 16
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Charizard",
       tipo1: "Fogo",
       tipo2: "Voador",
       peso: "90,5 kg",
-<<<<<<< HEAD
       altura: "1,7 m"
     },
     {
-=======
-      altura: "1,7 m",
-      ataque: 84,
-      defesa: 78,
-      nivel: 36
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Squirtle",
       tipo1: "Água",
       tipo2: null,
       peso: "9,0 kg",
-<<<<<<< HEAD
       altura: "0,5 m"
     },
-    {
-=======
-      altura: "0,5 m",
-      ataque: 48,
-      defesa: 65,
-      nivel: 5
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Wartortle",
       tipo1: "Água",
       tipo2: null,
       peso: "22,5 kg",
-<<<<<<< HEAD
       altura: "1,0 m"
     },
     {
-=======
-      altura: "1,0 m",
-      ataque: 63,
-      defesa: 80,
-      nivel: 16
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Blastoise",
       tipo1: "Água",
       tipo2: null,
       peso: "85,5 kg",
-<<<<<<< HEAD
       altura: "1,6 m"
     },
     {
-=======
-      altura: "1,6 m",
-      ataque: 83,
-      defesa: 100,
-      nivel: 36
-  },
-  {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Caterpie",
       tipo1: "Inseto",
       tipo2: null,
       peso: "2,9 kg",
-<<<<<<< HEAD
       altura: "0,3 m"
     },
-    {
-=======
-      altura: "0,3 m",
-      ataque: 30,
-      defesa: 35,
-      nivel: 1
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Metapod",
       tipo1: "Inseto",
       tipo2: null,
       peso: "9,9 kg",
-<<<<<<< HEAD
       altura: "0,7 m"
     },
-    {
-=======
-      altura: "0,7 m",
-      ataque: 20,
-      defesa: 55,
-      nivel: 7
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Butterfree",
       tipo1: "Inseto",
       tipo2: "Voador",
       peso: "32,0 kg",
-<<<<<<< HEAD
       altura: "1,1 m"
     },
-    {
-=======
-      altura: "1,1 m",
-      ataque: 45,
-      defesa: 50,
-      nivel: 10
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Weedle",
       tipo1: "Inseto",
       tipo2: "Veneno",
       peso: "3,2 kg",
-<<<<<<< HEAD
       altura: "0,3 m"
     },
-    {
-=======
-      altura: "0,3 m",
-      ataque: 35,
-      defesa: 30,
-      nivel: 1
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Kakuna",
       tipo1: "Inseto",
       tipo2: "Veneno",
       peso: "10,0 kg",
-<<<<<<< HEAD
       altura: "0,6 m"
     },
-    {
-=======
-      altura: "0,6 m",
-      ataque: 25,
-      defesa: 50,
-      nivel: 7
-  },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Beedrill",
       tipo1: "Inseto",
       tipo2: "Veneno",
       peso: "29,5 kg",
-<<<<<<< HEAD
       altura: "1,0 m"
     },
     {
@@ -572,7 +441,6 @@ const listaPokemon = [
       altura: "0,9 m"
     },
     {
-=======
       altura: "1,0 m",
       ataque: 90,
       defesa: 40,
@@ -1059,7 +927,6 @@ const listaPokemon = [
         nivel: 5
     },
   {
->>>>>>> 5a41972024d869915250fee7a2863b8c64397ac6
       nome: "Kadabra",
       tipo1: "Psíquico",
       tipo2: null,
