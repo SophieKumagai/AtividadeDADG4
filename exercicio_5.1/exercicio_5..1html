@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style_drag.css">
-    <script src="./script_drag.js" defer></script>
+    <link rel="stylesheet" href="./exercicio_5.1.css">
+    <script src="./exercicio_5.1.js" defer></script>
     <title>PokeMongo</title>
 </head>
 
@@ -30,23 +30,24 @@
         <div class="return">
             <div id="returnBox">
                 <div id="returnHead">Retorno</div>
+                <p id ="returnText"></p>
             </div>
         </div>
 
         <div id="professor">
             <div class="dialogBox">
-                <div id="box"><p class="fadeInText">um estudante veio ao laboratório e pediu para que você cadastrasse os pokemón que ele capturou em sua PC Box: <br><strong>“Diglett”, “terra”, “”, “0.8”, “0.2”</p></strong></div>
+                <div id="box"><p class="fadeInText">Outro estudante chegou e quer fortalecer seus Pokémon, para isso, ele gostaria de aumentar o peso do Bulbasaur em 2kg. Ordene como ele pode fazer isso.</p></strong></div>
             </div>
             <img id="prof" src="../assets/profOAK.png" alt="Professor OAK">
             <div>
                 <div class="alternativasDiv">
                     <div class="aTop column">
-                        <div id="alternativa1" class="alternativa" draggable="true">1</div>
-                        <div id="alternativa2" class="alternativa" draggable="true">2</div>
-                        <div id="alternativa3" class="alternativa" draggable="true">3</div>
-                        <div id="alternativa4" class="alternativa"draggable="true">4</div>
-                        <div id="alternativa5" class="alternativa"draggable="true">5</div>
-                        <div id="alternativa6" class="alternativa"draggable="true">6</div>
+                        <div id="alternativa1" class="alternativa" draggable="true">db.pokemons.update</div>
+                        <div id="alternativa2" class="alternativa" draggable="true">(</div>
+                        <div id="alternativa3" class="alternativa" draggable="true">)</div>
+                        <div id="alternativa4" class="alternativa"draggable="true">  { $inc: { weight: 2 } }</div>
+                        <div id="alternativa5" class="alternativa"draggable="true">                { name: "Bulbasaur" }</div>
+                        <div id="alternativa6" class="alternativa"draggable="true">,</div>
                     </div>
                     <div class="aBottom column">
                 
