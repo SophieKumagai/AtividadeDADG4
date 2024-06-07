@@ -11,6 +11,7 @@ const bt_voltar = document.querySelector("#voltar")
 const valor = document.getElementById("valor")
 const nome = localStorage.getItem("name")
 
+
 txt1.innerHTML = "<p id='parte1'> Olá, Treinador Pokémon " + nome.toUpperCase() +"! Recentemente meu time de pesquisa decidiu que vamos criar uma nova PC Box baseada em MongoDB. <br><br> Primeiramente, vamos aprender a buscar registros em sua coleção armazenada na PC Box, ou seja, nosso banco de dados, semelhante à forma como você consulta informações sobre os pokémon. <br><br> Assim como a PC Box armazena uma lista com todos os pokémon capturados e suas características, em MongoDB, você armazena documentos em coleções. Por exemplo, você pode ter uma coleção chamada \"pokemons\" para guardar as informações sobre todos os seus pokémon, nesse caso cada pokémon é um documento.</p>";
 txt3.innerHTML = "<p id='parte3'> Parabéns, Treinador Pokémon " + nome.toUpperCase() +"! Você inseriu o Pikachu! <br><br> Ah, não! Um Pidgey selvagem! Vamos procurar o nosso Pidgey para conseguir derrotá-lo com o comando 'FindOne': <br> <strong>db.pokemons.findOne({nome: \"Pidgey\"})</strong></p>";
 txt6.innerHTML = "<p id='parte6'> Pronto, Treinador Pokémom " + nome.toUpperCase() +"! Agora você sabe como usar consultas em MongoDB para encontrar informações sobre seus pokémons, assim como faz com sua PC box! Boa sorte em suas buscas!</p>";
@@ -42,13 +43,15 @@ function verificar() {
         txt3.classList.add("invisivel")
         valor.classList.remove("invisivel")
     } else if (cont == 5) {
-        if (resposta.toLowerCase() == "db.pokemons.insertone({nome: \"pikachu\", tipo1: \"eletrico\", tipo2: \"nenhum\", peso: 6.0, altura: 0.4, nivel: 2})") {
+        resposta = resposta.replace(/\s+/g, "")
+        console.log(resposta)
+        if (resposta.toLowerCase() == "db.pokemons.insertone({nome:\"pikachu\",tipo1:\"eletrico\",tipo2:\"nenhum\",peso:6.0,altura:0.4,nivel:2})") {
             valor.classList.add("invisivel")
             txt3.classList.remove("invisivel")
             txt3.classList.add("fadeInText")
         } else {
-            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
             cont -= 1
+            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
         }
     } else if (cont == 6) {
         txt3.classList.add("invisivel")
@@ -59,13 +62,14 @@ function verificar() {
         txt4.classList.add("invisivel")
         valor.classList.remove("invisivel")
     } else if (cont == 8) {
-        if (resposta.toLowerCase() == "db.pokemons.findone({nome: \"pidgey\"})") {
+        resposta = resposta.replace(/\s+/g, "")
+        if (resposta.toLowerCase() == "db.pokemons.findone({nome:\"pidgey\"})") {
             valor.classList.add("invisivel")
             txt4.classList.remove("invisivel")
             txt4.classList.add("fadeInText")
         } else {
-            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
             cont -= 1
+            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
         }
     } else if (cont == 9) {
         txt4.classList.add("invisivel")
@@ -76,13 +80,14 @@ function verificar() {
         txt5.classList.add("invisivel")
         valor.classList.remove("invisivel")
     } else if (cont == 11) {
-        if (resposta.toLowerCase() == "db.pokemons.deleteone({nome: \"torchic\"})") {
+        resposta = resposta.replace(/\s+/g, "")
+        if (resposta.toLowerCase() == "db.pokemons.deleteone({nome:\"torchic\"})") {
             valor.classList.add("invisivel")
             txt5.classList.remove("invisivel")
             txt5.classList.add("fadeInText")
         } else {
-            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
             cont -= 1
+            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
         }
     } else if (cont == 12) {
         txt5.classList.add("invisivel")
@@ -92,15 +97,22 @@ function verificar() {
         resposta = valor.value
         txt6.classList.add("invisivel")
         valor.classList.remove("invisivel")
+        bt_avancar.textContent = "Avançar"
     } else if (cont == 14) {
-        if (resposta.toLowerCase() == "db.pokemons.updateone({nome: \"pidgey\"}, {$set: {nome: \"pidgeotto\", nivel: 18}})") {
+        resposta = resposta.replace(/\s+/g, "")
+        if (resposta.toLowerCase() == "db.pokemons.updateone({nome:\"pidgey\"},{$set:{nome:\"pidgeotto\",nivel:18}})") {
             valor.classList.add("invisivel")
             txt6.classList.remove("invisivel")
             txt6.classList.add("fadeInText")
         } else {
-            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
             cont -= 1
+            window.alert("Poxa, parece que algo deu errado. Tente novamente!")
         }
+        bt_avancar.textContent = "Concluir"
+    } else if (cont ==  15) {
+        window.alert("Parabéns, voce concluiu o tutorial!")
+        localStorage.setItem("tutorial", "entrou")
+        window.open("../exercicio_1/indexq1.html", "_self")
     }
 }
 
