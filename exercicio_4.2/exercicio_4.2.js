@@ -52,10 +52,33 @@ function getItemsOrder() {
     const order = [...cards].map(card => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa5","alternativa6", "alternativa4", "alternativa3"], orderInfo)){
+  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
     alert("Right order!");
-    let crudMethod = new CrudMethod(); 
-    resultText.textContent= crudMethod.findOneByName("Bulbasaur");
+  var resultado = JSON.stringify(
+    {
+      nome: "Snorlax",
+      tipo1: "Normal",
+      tipo2: null,
+      peso: 460.0,
+      altura: 2.1
+      },
+      {
+      nome: "Gyarados",
+      tipo1: "Água",
+      tipo2: "Voador",
+      peso: "235,0 kg",
+      altura: "6,5 m"
+      },
+      {
+      nome: "Lapras",
+      tipo1: "Água",
+      tipo2: "Gelo",
+      peso: "220,0 kg",
+      altura: "2,5 m"
+      }
+  )
+
+    resultText.textContent= resultado
     alert(resultText.textContent);
   }
   else{

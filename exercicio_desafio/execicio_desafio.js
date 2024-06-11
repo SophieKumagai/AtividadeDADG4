@@ -49,8 +49,13 @@ function getItemsOrder() {
     const order = [...cards].map(card => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa6", "alternativa3","alternativa5", "alternativa4", "alternativa2"], orderInfo)){
+  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
     alert("Right order!");
+    resultText.textContent= JSON.stringify(
+      {
+        "list_aggregate":[{ "_id": "Venenoso", "count": 33 },{ "_id": "Água", "count": 32 },{ "_id": "Normal", "count": 24 },{ "_id": "Grama", "count": 14 },{ "_id": "Terra", "count": 14 },{ "_id": "Psíquico", "count": 14 },{ "_id": "Inseto", "count": 12 },{ "_id": "Fogo", "count": 12 },{ "_id": "Elétrico", "count": 9 },{ "_id": "Lutador", "count": 8 },{ "_id": "Pedra", "count": 7 },{ "_id": "Gelo", "count": 5 },{ "_id": "Fantasma", "count": 3 },{ "_id": "Dragão", "count": 3 }]
+      }
+    )
   }
   else{
     alert("Wrong order!");

@@ -52,11 +52,60 @@ function getItemsOrder() {
     const order = [...cards].map(card => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa5","alternativa6", "alternativa4", "alternativa3"], orderInfo)){
+  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
     alert("Right order!");
-    let crudMethod = new CrudMethod(); 
-    resultText.textContent= crudMethod.findOneByName("Bulbasaur");
-    alert(resultText.textContent);
+    resultText.textContent= JSON.stringify({
+      "List":[
+        {
+          "nome": "Dragonite",
+          "tipo1": "Dragão",
+          "tipo2": "Voador",
+          "peso": "210,0 kg",
+          "altura": "2,2 m",
+          "ataque": 134,
+          "defesa": 95,
+          "nivel": 50
+        },
+        {
+          "nome": "Kingler",
+          "tipo1": "Água",
+          "peso": "60,0 kg",
+          "altura": "1,3 m",
+          "ataque": 130,
+          "defesa": 115,
+          "nivel": 50
+        },
+        {
+          "nome": "Flareon",
+          "tipo1": "Fogo",
+          "peso": "25,0 kg",
+          "altura": "0,9 m",
+          "ataque": 130,
+          "defesa": 60,
+          "nivel": 50
+        },
+        {
+          "nome": "Machamp",
+          "tipo1": "Lutador",
+          "peso": "130,0 kg",
+          "altura": "1,6 m",
+          "ataque": 130,
+          "defesa": 80,
+          "nivel": 50
+        },
+        {
+          "nome": "Rhydon",
+          "tipo1": "Terra",
+          "tipo2": "Pedra",
+          "peso": "120,0 kg",
+          "altura": "1,9 m",
+          "ataque": 130,
+          "defesa": 120,
+          "nivel": 50
+        }
+      ]
+  }
+)
   }
   else{
     alert("Wrong order!");

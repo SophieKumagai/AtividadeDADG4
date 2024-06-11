@@ -52,13 +52,18 @@ function getItemsOrder() {
     const order = [...cards].map(card => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa5","alternativa6", "alternativa4", "alternativa3"], orderInfo)){
+  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
     alert("Right order!");
-    let crudMethod = new CrudMethod(); 
-    var resultado= 
-    "{nome: \"Bulbasaur\", tipo1: \"Planta\", tipo2: \"Veneno\", peso: \"6,9 kg\", altura: \"0,7 m\", ataque: 49, defesa: 49, nivel: 5}";
+
+    var resultado = JSON.stringify({
+      "acknowledged": true,
+      "matchedCount": 1,
+      "modifiedCount": 1,
+      "upsertedId": null,
+      "upsertedCount": 0
+  });
     console.log(resultado);
-    resultText.innerHTML = resultado
+    resultText.textContent = resultado
     alert(resultText.textContent);
   }
   else{

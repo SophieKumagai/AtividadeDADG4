@@ -52,11 +52,17 @@ function getItemsOrder() {
     const order = [...cards].map(card => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa5","alternativa6", "alternativa4", "alternativa3"], orderInfo)){
+  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
     alert("Right order!");
-    let crudMethod = new CrudMethod(); 
-    resultText.textContent= crudMethod.findOneByName("Bulbasaur");
-    alert(resultText.textContent);
+    resultText.textContent= JSON.stringify(
+      {
+        "acknowledged": true,
+        "matchedCount": 46,
+        "modifiedCount": 46,
+        "upsertedId": null,
+        "upsertedCount": 0
+      }
+    )
   }
   else{
     alert("Wrong order!");
