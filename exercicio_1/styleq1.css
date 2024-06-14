@@ -335,7 +335,7 @@ strong {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .circle {
@@ -351,5 +351,11 @@ strong {
 }
 
 .circleShrink {
+  background-color: #131f24;
+  border-radius: 50%;
   animation: shrinkCircle 1.8s linear forwards;
+}
+
+.invisivel {
+  display: none
 }

@@ -110,7 +110,7 @@ function verificar() {
         }
         bt_avancar.textContent = "Concluir"
     } else if (cont ==  15) {
-        window.alert("Parabéns, voce concluiu o tutorial!")
+        window.alert("Parabéns, você concluiu o tutorial!")
         localStorage.setItem("tutorial", "entrou")
         window.open("../exercicio_1/indexq1.html", "_self")
     }
@@ -126,5 +126,14 @@ function avancar() {
     verificar()
 }
 
-bt_avancar.addEventListener("click", avancar)
-bt_voltar.addEventListener("click", voltar)
+bt_avancar.addEventListener("click", (e) => {
+    console.log("avancar");
+    console.log(e.target);
+    avancar()
+})
+
+bt_voltar.addEventListener("click", (e) => {
+    console.log("voltar");
+    console.log(e.target);
+    voltar()
+})
