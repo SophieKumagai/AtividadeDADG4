@@ -80,7 +80,8 @@ code {
 }
 
 strong {
-    color: #497EAC;
+    color: #245f9b;
+    font-size: 20px
 }
 
 input {
@@ -135,4 +136,23 @@ iframe{
     font-weight: bold;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+div img {
+    width: 30px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+#comandos-icon {
+    filter: brightness(0) invert(1);
+}
+
+#voltar {
+    width: 40px;
+    position: relative;
+    top: 5px;
+    filter: brightness(0) invert(1);
+    right: 850px;
 }
