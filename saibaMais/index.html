@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>
-            <a href="index.html"><img src="assets/img/botao-de-inicio.png" alt="home" id="home"/></a> MongoDB <img src="assets/img/mongo.png" alt="mongo">
+            MongoDB <img src="../assets/mongo.png" alt="mongo">
         </h1>
     </header>
 
@@ -41,7 +41,47 @@
         </div>
         <div class="card tema" id="config">Configurações</div>
         <div class="lista-conteudos invisivel" id="conteudo-config">
-            <iframe src="https://www.mongodb.com/docs/guides/" frameborder="0.5"></iframe>  
+            <!-- <iframe src="https://www.mongodb.com/docs/guides/" frameborder="0.5"></iframe>   -->
+        </div>
+        <div class="card tema" id="conceitos">Conceitos Básicos</div>
+        <div class="lista-conteudos invisivel" id="conteudo-conceitos">
+            <pre>
+                <code>
+var btn = document.querySelector("button");
+
+btn.onclick = function () {
+    var rndCol = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")"";
+    document.body.style.backgroundColor = rndCol;
+};
+                </code>
+            </pre>
+
+            <h5>HTML</h5>
+            <br>
+            <p>
+                <code>
+                    &lt;button onclick="bgChange()"&gt;Clique&lt;/button&gt;
+                </code>
+            </p>
+            <br>
+        
+            <h4>addEventListener("click", () => {})</h4>
+            <p>Monitora o evento de clique implementado por meio da função addEventListener()</p>
+            <br>
+            <h5>JS</h5>
+            <pre>
+                <code>
+var btn = document.querySelector("button");
+
+function bgChange() {
+    var rndCol =
+        "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+    document.body.style.backgroundColor = rndCol;
+};
+
+btn.addEventListener("click", bgChange);
+                </code>
+            </pre>
         </div>
         <div class="card tema" id="comandos">Comandos Básicos</div>
         <div class="lista-conteudos invisivel" id="conteudo-comandos">

@@ -19,6 +19,11 @@ cardComandos.addEventListener("click", () => {
     abrirLista("conteudo-comandos")
 })
 
+const cardConceitos = document.getElementById("conceitos")
+cardConceitos.addEventListener("click", () => {
+    abrirLista("conteudo-conceitos")
+})
+
 const pesquisa = document.getElementById("pesquisa")
 
 pesquisa.addEventListener("keyup", () => {
@@ -27,9 +32,11 @@ pesquisa.addEventListener("keyup", () => {
 
 function achar(valor) {
     let cont = 0
-    const cards = document.querySelectorAll(".comandos")
+    const cards = document.querySelectorAll(".card")
     const texto = document.getElementById("nenhum")
     for (let i = 0; i < cards.length; i++) {
+        console.log(cards[i].textContent.toLowerCase().substring(0, valor.length));
+        console.log(valor.toLowerCase());
         if (cards[i].textContent.toLowerCase().substring(0, valor.length) == valor.toLowerCase()) {
             if (cards[i].classList.contains("invisivel")) {
                 cards[i].classList.remove("invisivel")
