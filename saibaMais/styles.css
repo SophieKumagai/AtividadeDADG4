@@ -156,3 +156,17 @@ div img {
     filter: brightness(0) invert(1);
     right: 850px;
 }
+
+#pikachu {
+    position: absolute;
+    left: 100px;
+    width: 80px;
+    top: 10px;
+}
+
+#lapras {
+    position: absolute;
+    right: 100px;
+    width: 110px;
+    top: -20px;
+}
