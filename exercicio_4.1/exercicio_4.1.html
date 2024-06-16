@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleq1.css">
-    <script src="./scriptq1.js" defer></script>
+    <link rel="stylesheet" href="./exercicio_4.1.css">
+    <script src="./exercicio_4.1.js" defer></script>
     <title>PokeMongo</title>
 </head>
 
@@ -30,30 +30,31 @@
         <div class="return">
             <div id="returnBox">
                 <div id="returnHead">Retorno</div>
-                <p id="returnText"></p>
+                <p id ="returnText"></p>
             </div>
         </div>
-        <div class="answerLines">
-            <div id="line1"></div>
-            <div id="line2"></div>
-        </div>
+
         <div id="professor">
             <div class="dialogBox">
-                <div id="box"><p class="fadeInText">um estudante veio ao laboratório e pediu para que você cadastrasse os pokemón que ele capturou em sua PC Box: <br><strong>“Diglett”, “terra”, “”, “0.8”, “0.2”</p></strong></div>
+                <div id="box"><p class="fadeInText">Outro estudante chegou e quer fortalecer seus Pokémon, para isso, ele gostaria de aumentar o peso do Bulbasaur em 2kg. Ordene como ele pode fazer isso.</p></strong></div>
             </div>
             <img id="prof" src="../assets/profOAK.png" alt="Professor OAK">
-            <alternativas>
+            <div>
                 <div class="alternativasDiv">
-                    <div class="aTop">
-                        <div id="alternativa1" class="alternativa">db.pokemon.updateMany( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
-                        <div id="alternativa2" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                    <div class="aTop column">
+                        <div id="alternativa1" class="alternativa" draggable="true">db.pokemons.update</div>
+                        <div id="alternativa2" class="alternativa" draggable="true">(</div>
+                        <div id="alternativa6" class="alternativa" draggable="true">)</div>
+                        <div id="alternativa5" class="alternativa"draggable="true">  { $inc: { weight: 2 } }</div>
+                        <div id="alternativa3" class="alternativa"draggable="true">                { name: "Bulbasaur" }</div>
+                        <div id="alternativa4" class="alternativa"draggable="true">,</div>
                     </div>
-                    <div class="aBottom">
-                        <div id="alternativa3" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
-                        <div id="alternativa4" class="alternativa">db.pokemon.find( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                    <div class="aBottom column">
+                
+                        
                     </div>
                 </div>
-            </alternativas>
+            </div>
         </div>
 
     </main>
@@ -62,18 +63,12 @@
         <div id="lineFooter"></div>
         <div class="botoes">
             <div id="btnSkip">Pular</div>
-            <div id="btnTip">Saiba Mais</div>
-            <div id="btnVerify">Verificar</div>
+            <div id="btnTip"><img src="../assets/lightbulb-02.png" alt=""> Use dica</div>
+            <div id="btnVerify" onclick="getItemsOrder()">Verificar</div>
         </div>
     </footer>
 
-    <div id="circle" class="container">
-        <div class="overlay"></div>
-        <div class="" id="circle_obj"></div>
-    </div>
-
     <audio id="som" src="../assets/batalha.mp3"></audio>
-    <audio id="som2" src="../assets/home.mp3"></audio>
 </body>
 
 </html>

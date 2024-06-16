@@ -18,33 +18,6 @@
     animation: fadeIn 2s ease-out;
 }
 
-@keyframes growCircle {
-  0% {
-      width: 0;
-      height: 0;
-      opacity: 1;
-  }
-  100% {
-      width: 3000px;
-      height: 3000px;
-      opacity: 1;
-  }
-}
-
-@keyframes shrinkCircle {
-  0% {
-      width: 3000px;
-      height: 3000px;
-      opacity: 1;
-  }
-  100% {
-      width: 0px;
-      height: 0px;
-      opacity: 1;
-  }
-}
-
-
 img {
     user-select: none; /* Para a maioria dos navegadores */
     -webkit-user-drag: none; /* Para navegadores baseados em WebKit */
@@ -76,11 +49,10 @@ body {
 }
 
 #bar {
-  width: 12.5%;
+  width: 16.6%;
   height: 20px;
   border-radius: 10px;
   background-color: #6d5f6d;
-  transition: 50ms;
 }
 #pokebola {
   display: flex;
@@ -184,6 +156,16 @@ strong {
   font-size: 150%;
   font-style: normal;
 }
+#returnText {
+  text-align: center;
+  color: #55646C;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  font-style: normal;
+  align-content: center;
+  text-align: center;
+}
 
 /* #returnHead:hover {
   cursor: pointer;
@@ -285,8 +267,8 @@ strong {
 .alternativasDiv {
   display: flex;
   position: absolute;
-  top: 60%;
-  left: 36%;
+  top: 30%;
+  left: 34%;
 
 }
 
@@ -302,7 +284,7 @@ strong {
   color: #fff;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 20px;
   font-style: normal;
   align-content: center;
   text-align: center;
@@ -312,120 +294,23 @@ strong {
   margin: 0 20px 20px 0;
 }
 
-#alternativa3 {
-  margin: 0 20px 20px 0;
+#alternativa4 {
+  margin: 19px 0;
+}
+.column{
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #1d292e;
+  min-width: 300px;
+  border-radius: 20px;  
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
 }
 
-#alternativa1:hover, #alternativa2:hover, #alternativa3:hover, #alternativa4:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
 
-.alternativa1Select {
-  transition: 10ms;
-  position: absolute;
-  top: -180px;
-  left: 135px;
-}
-
-.alternativa2Select {
-  position: absolute;
-  top: -180px;
-  left: 140px;
-}
-
-.alternativa3Select {
-  transition: 10ms;
-  position: absolute;
-  top: -180px;
-  right: 120px;
-}
-
-.alternativa4Select {
-  transition: 10ms;
-  position: absolute;
-  top: -180px;
-  right: 165px;
-}
-
-#alternativa1Selected {
-  width: 250px;
-  height: 75px;
-  border: 2px solid #55646C;
-  border-radius: 20px;
-  background-color: #37464F;
-  margin: 0 26px 20px 0
-}
-
-#alternativa2Selected, #alternativa4Selected {
-  /* Estilizando as alternativas */
-  width: 250px;
-  height: 75px;
-  border: 2px solid #55646C;
-  border-radius: 20px;
-  background-color: #37464F;
-}
-
-#alternativa3Selected {
-  /* Estilizando as alternativas */
-  width: 250px;
-  height: 75px;
-  border: 2px solid #55646C;
-  border-radius: 20px;
-  background-color: #37464F;
-
-  margin: 0 20px 20px 0;
-}
-
-#returnText {
-  /* Estilizando o texto */
-  color: #92c255;
-  align-content: center;
-  box-sizing: border-box;
-  padding-top: 40px;
-  padding-left: 30px;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-size: 120%;
-  font-style: normal;
-}
 #alternativa1:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
 #alternativa2:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
 #alternativa3:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
 #alternativa4:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
-
-.container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #131f24;
-}
-
-.circleGrow {
-  animation: growCircle 1.8s linear forwards;
-}
-
-.circleShrink {
-  background-color: #131f24;
-  border-radius: 50%;
-  animation: shrinkCircle 1.8s linear forwards;
-}
-
-.invisivel {
-  display: none
-}
