@@ -6,6 +6,8 @@ O Pokemongo é um projeto escolar com o objetivo de ensinar de forma didádica s
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 deixe a resolução do windows em 100%
+deixa a resolução do navegador em 90%
+
 Para acessar o projeto, entre no link abaixo!
 [link]
 
