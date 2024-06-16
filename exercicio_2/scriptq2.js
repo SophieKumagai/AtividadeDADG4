@@ -14,14 +14,12 @@ const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
 const returnText = document.getElementById("returnText");
 
-progressBar.classList.add("none");
-
 btnVerify.addEventListener("click", () => {
   const rodape = document.getElementById("rodape");
 
   if (qSelect == 0) {
     window.alert("Selecione uma alternativa");
-  } else if (qSelect == 2) {
+  } else if (qSelect == 1) {
     rodape.style.opacity = "0"; // Iniciar a transição de opacidade
     setTimeout(() => {
       progressBar.classList.remove("none");
@@ -33,9 +31,8 @@ btnVerify.addEventListener("click", () => {
                   <div id="btnNext">Avançar</div>
               </div>
           `;
-
+  
       const style = document.createElement("style");
-
       style.innerHTML = `
           /* http://meyerweb.com/eric/tools/css/reset/ 
           v2.0 | 20110126
@@ -139,7 +136,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 12.5%;
+         width: 16.6%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
@@ -451,25 +448,41 @@ btnVerify.addEventListener("click", () => {
        
           `;
       document.head.appendChild(style);
-
+  
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
       const btAvancar = document.getElementById("btnNext");
       btAvancar.addEventListener("click", () => {
-        window.open("../exercicio_2/indexq2.html", "_self");
-      });
+        window.open("../exercicio_3/indexq3.html", "_self");
+      })
 
       alternativa1.removeEventListener("click", () => {});
       alternativa2.removeEventListener("click", () => {});
       alternativa3.removeEventListener("click", () => {});
       alternativa4.removeEventListener("click", () => {});
 
-      returnText.innerText = `
-{
-  "acknowledged": true,
-  "insertedId": ObjectId("50"),
-}
+      returnText.innerText = 
+      `
+      {
+  "_id": ObjectId("1"),
+  "nome": "Bulbasaur",
+  "tipo1": "Grass",
+  "tipo2": "Poison",
+  "peso": 6.9,
+  "altura": 0.7,
+  "stats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "speed": 45,
+    "special_attack": 65,
+    "special_defense": 65
+  }
 
-`;
+
+      `
+
+      progressBar.style.width = "25%";
+
     }, 1000); // Tempo para a transição de opacidade
   } else {
     const alternativas = document.querySelectorAll(".alternativa");
@@ -593,7 +606,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 12.5%;
+         width: 16.6%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
@@ -964,40 +977,31 @@ btnVerify.addEventListener("click", () => {
       alternativa3.removeEventListener("click", () => {});
       alternativa4.removeEventListener("click", () => {});
 
-      if (qSelect == 1) {
-        returnText.innerText = `
-          {
-          "acknowledged": true,
-          "matchedCount": 0,
-          "modifiedCount": 0
-          }
-
-        `;
-        // setando a cor vermelha no texto do return
+      if (qSelect == 2) {
+        returnText.innerText = " {retornou vazio} ";
         returnText.style.color = "#EE4035";
       }
+      
       if (qSelect == 3) {
-        returnText.innerText = `
-          {
-            "acknowledged": true,
-            "matchedCount": 0,
-            "modifiedCount": 0
-          }
-
-        `;
+        returnText.innerText = " {retornou vazio} ";
         returnText.style.color = "#EE4035";
       }
+      
       if (qSelect == 4) {
         returnText.innerText = "[]";
         returnText.style.color = "#EE4035";
       }
-
+      
       btnNext.addEventListener("click", () => {
-        window.open("./indexq1.html", "_self");
-      });
+        window.open("./indexq2.html", "_self");
+      })
+
     }, 1000); // Tempo para a transição de opacidade
   }
 });
+
+
+
 
 alternativa1Selected.classList.add("none");
 alternativa2Selected.classList.add("none");
@@ -1006,13 +1010,15 @@ alternativa4Selected.classList.add("none");
 
 let qSelect = 0;
 
+
+
 function selecaoDeAlternativas() {
   alternativa1.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 1;
       alternativa1Selected.classList.remove("none");
       alternativa1.classList.add("alternativa1Select");
-    } else if (qSelect == 1) {
+    } else if ( qSelect == 1 ) {
       qSelect = 0;
       alternativa1Selected.classList.add("none");
       alternativa1.classList.remove("alternativa1Select");
@@ -1020,11 +1026,11 @@ function selecaoDeAlternativas() {
   });
 
   alternativa2.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 2;
       alternativa2Selected.classList.remove("none");
       alternativa2.classList.add("alternativa2Select");
-    } else if (qSelect == 2) {
+    } else if ( qSelect == 2 ) {
       qSelect = 0;
       alternativa2Selected.classList.add("none");
       alternativa2.classList.remove("alternativa2Select");
@@ -1032,11 +1038,11 @@ function selecaoDeAlternativas() {
   });
 
   alternativa3.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 3;
       alternativa3Selected.classList.remove("none");
       alternativa3.classList.add("alternativa3Select");
-    } else if (qSelect == 3) {
+    } else if ( qSelect == 3 ) {
       qSelect = 0;
       alternativa3Selected.classList.add("none");
       alternativa3.classList.remove("alternativa3Select");
@@ -1044,16 +1050,17 @@ function selecaoDeAlternativas() {
   });
 
   alternativa4.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 4;
       alternativa4Selected.classList.remove("none");
       alternativa4.classList.add("alternativa4Select");
-    } else if (qSelect == 4) {
+    } else if ( qSelect == 4 ) {
       qSelect = 0;
       alternativa4Selected.classList.add("none");
       alternativa4.classList.remove("alternativa4Select");
     }
   });
+
 }
 
 selecaoDeAlternativas();

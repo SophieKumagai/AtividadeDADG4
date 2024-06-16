@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleq1.css">
-    <script src="scriptq1.js" defer></script>
+    <link rel="stylesheet" href="styleq2.css">
+    <script src="scriptq2.js" defer></script>
     <title>PokeMongo</title>
 </head>
 
@@ -38,26 +38,26 @@
         </div>
         <div id´="professor">
             <div class="dialogBox">
-                <div id="box"><p class="fadeInText">um estudante veio ao laboratório e pediu para que você cadastrasse os pokemón que ele capturou em sua PC Box: <br><strong>“Diglett”, “terra”, “”, “0.8”, “0.2”</p></strong></div>
+                <div id="box"><p class="fadeInText">O treinador gostaria de ver as informações apenas do <br><strong>Bulbasaur</p></strong></div>
             </div>
             <img id="prof" src="../assets/profOAK.png" alt="Professor OAK">
             <alternativas>
                 <div class="alternativasDiv">
                     <div class="aTop">
-                        <div id="alternativa1" class="alternativa">db.pokemons.updateMany( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
+                        <div id="alternativa1" class="alternativa">db.pokemons.findOne({ nome: "Bulbasaur" })</div>
                         <div id="alternativa1Selected"></div>
-                        <div id="alternativa2" class="alternativa">db.pokemons.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa2" class="alternativa">db.pokemon.findOne({ nome: "Bulbassaur" })</div>
                         <div id="alternativa2Selected"></div>
                     </div>
                     <div class="aBottom">
-                        <div id="alternativa3" class="alternativa">db.pokemons.updateOne( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
+                        <div id="alternativa3" class="alternativa">db.pokemon.findOne({ nome: "Bulbasaur" })</div>
                         <div id="alternativa3Selected"></div>
-                        <div id="alternativa4" class="alternativa">db.pokemons.find( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa4" class="alternativa">db.pokemon.findOne({ nomes: "Bulbassaur" })</div>
                         <div id="alternativa4Selected"></div>
                     </div>
                 </div>
             </alternativas>
-        </div>o
+        </div>
     </main>
     
     <footer id="rodape">
