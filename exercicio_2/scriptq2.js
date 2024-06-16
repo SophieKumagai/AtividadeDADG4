@@ -14,6 +14,11 @@ const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
 const returnText = document.getElementById("returnText");
 
+let audio = new Audio("../assets/batalha.mp3");
+window.addEventListener("load", () => {
+  audio.play();
+});
+
 const btnTip = document.getElementById("btnTip");
 btnTip.addEventListener("click", () => {
   window.open("../saibaMais/index.html");

@@ -1,9 +1,9 @@
 // adicionando som
-// let audio = new Audio('../assets/batalha.mp3');
+let audio = new Audio('../assets/batalha.mp3');
 
-// window.addEventListener('load', () => {
-//     audio.play();
-// })
+window.addEventListener('load', () => {
+    audio.play();
+})
 
 const columns = document.querySelectorAll(".column");
 const resultCollumn = document.querySelectorAll(".aBottom");

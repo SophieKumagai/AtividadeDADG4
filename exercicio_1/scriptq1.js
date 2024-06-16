@@ -1077,7 +1077,7 @@ const circle = document.querySelector("#circle_obj");
 const container = document.querySelector("#circle");
 
 window.addEventListener("load", () => {
-  audio.play();
+  //audio.play();
 });
 const verif = localStorage.getItem("tutorial");
 if (verif == "entrou") {
@@ -1130,6 +1130,7 @@ window.addEventListener("storage", function (event) {
     console.log("Antigo valor:", event.oldValue);
     fadeOut(audio2, 1800);
     this.setTimeout(function () {
+      audio.play();
       window.location.reload();
     }, 100);
   }
