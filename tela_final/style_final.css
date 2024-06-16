@@ -1,0 +1,38 @@
+body{
+    background-color: #131f24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 220%;
+    color: white;
+    text-align: center;
+    font-family: 'ubuntu', sans-serif;
+}
+ 
+img{
+    width: 25%;
+}
+ 
+div{
+    background-color: #6a8c9c;
+    width: 50%;
+    border-radius: 50px;
+}
+ 
+h1{
+    font-size: 125%;
+}
+ 
+li{
+    list-style: none;
+    margin: 1% auto;
+}
+ 
+li :hover{
+    background-color: #2f424a;
+}
+ 
+a{
+    color: #31718d;
+}

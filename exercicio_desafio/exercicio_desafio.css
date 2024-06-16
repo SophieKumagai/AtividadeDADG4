@@ -49,7 +49,7 @@ body {
 }
 
 #bar {
-  width: 16.6%;
+  width: 87.5%;
   height: 20px;
   border-radius: 10px;
   background-color: #6d5f6d;
@@ -61,19 +61,21 @@ body {
   margin: -15px 0 0 150px;
 }
 
-#textVida {
-    /* Estilizando o texto */
-    color: #fff;
-    align-content: center;
-    box-sizing: border-box;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    margin-right: 15px;
-}
-
 .pokevida {
   width: 50px;
+}
+
+#returnText {
+  /* Estilizando o texto */
+  color: #92c255;
+  align-content: center;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-left: 30px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 120%;
+  font-style: normal;
 }
 
 .none {
@@ -92,13 +94,17 @@ body {
 #box {
   /* Estilizando a caixa */
   position: absolute;
-  width: 350px;
-  height: 100px;
+  width: 400px;
+  height: wrap;
   border: 5px solid #55646c;
   background-color: #1d292e;
   border-radius: 15px;
-  top: 400px;
-  left: 12%;
+  top: 320px;
+  left: 8%;
+}
+
+a {
+  color: #92c255;
 }
 
 
@@ -291,9 +297,10 @@ strong {
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-  margin: 10px;
+  margin: -70px 10px 10px 10px;
   background-color: #1d292e;
   min-width: 300px;
+  min-height: 550px;
   border-radius: 20px;  
   border: 5px solid #55646C;
   border-bottom: 9px solid #48555B;

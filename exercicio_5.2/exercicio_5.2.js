@@ -1,28 +1,44 @@
 // adicionando som
-let audio = new Audio('../assets/batalha.mp3');
+let audio = new Audio("../assets/batalha.mp3");
 
-
-window.addEventListener('load', () => {
-    audio.play();
-})
+window.addEventListener("load", () => {
+  audio.play();
+});
 
 const columns = document.querySelectorAll(".column");
 const resultCollumn = document.querySelectorAll(".aBottom");
 const resultText = document.querySelector("#returnText");
+const rodape = document.querySelector("#rodape");
+const progressBar = document.getElementById("bar");
+
+const btnTip = document.getElementById("btnTip");
+btnTip.addEventListener("click", () => {
+  window.open("../saibaMais/index.html");
+});
+
+const btnSkip = document.getElementById("btnSkip");
+btnSkip.addEventListener("click", () => {
+  const confirmation = window.confirm(
+    "Você tem certeza que deseja pular o exercício?"
+  );
+  if (confirmation) {
+    window.open("../exercicio_desafio/exercicio_desafio.html", "_self");
+  }
+});
 
 document.addEventListener("dragstart", (e) => {
   e.target.classList.add("dragging");
 });
- 
+
 document.addEventListener("dragend", (e) => {
   e.target.classList.remove("dragging");
 });
- 
+
 columns.forEach((item) => {
   item.addEventListener("dragover", (e) => {
     const dragging = document.querySelector(".dragging");
     const applyAfter = getNewPosition(item, e.clientY);
- 
+
     if (applyAfter) {
       applyAfter.insertAdjacentElement("afterend", dragging);
     } else {
@@ -33,28 +49,39 @@ columns.forEach((item) => {
 function getNewPosition(column, posY) {
   const cards = column.querySelectorAll(".alternativa:not(.dragging)");
   let result;
- 
+
   for (let refer_card of cards) {
     const box = refer_card.getBoundingClientRect();
     const boxCenterY = box.y + box.height / 2;
- 
+
     if (posY >= boxCenterY) result = refer_card;
   }
- 
+
   return result;
 }
 function getItemsOrder() {
   //Informação com cada coluna
 
-  let orderInfo = '';
+  let orderInfo = "";
   resultCollumn.forEach((column) => {
     const cards = column.querySelectorAll(".alternativa");
-    const order = [...cards].map(card => card.id).join(",");
+    const order = [...cards].map((card) => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
-    alert("Right order!");
-    resultText.textContent= JSON.stringify({
+  if (
+    verifyOrder(
+      [
+        "alternativa1",
+        "alternativa2",
+        "alternativa3",
+        "alternativa4",
+        "alternativa5",
+        "alternativa6",
+      ],
+      orderInfo
+    )
+  ) {
+    resultText.textContent = `{
       "List":[
         {
           "nome": "Dragonite",
@@ -104,11 +131,10 @@ function getItemsOrder() {
           "nivel": 50
         }
       ]
-  }
-)
-rodape.style.opacity = "0"; // Iniciar a transição de opacidade
-setTimeout(() => {
-  rodape.innerHTML = `
+  }`;
+    rodape.style.opacity = "0"; // Iniciar a transição de opacidade
+    setTimeout(() => {
+      rodape.innerHTML = `
           <div id="lineFooter"></div>
           <div class="botoes">
               <img id="circleSuccess" src="../assets/circleSuccess.png" alt="">
@@ -117,8 +143,8 @@ setTimeout(() => {
           </div>
       `;
 
-  const style = document.createElement("style");
-  style.innerHTML = ` @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      const style = document.createElement("style");
+      style.innerHTML = ` @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @keyframes fadeIn {
 from {
     opacity: 0;
@@ -169,7 +195,7 @@ border-radius: 50px;
 }
 
 #bar {
-width: 16.6%;
+width: 75%;
 height: 20px;
 border-radius: 10px;
 background-color: #6d5f6d;
@@ -417,16 +443,17 @@ margin: 0 20px 20px 0;
 #alternativa4 {
 margin: 19px 0;
 }
+
 .column{
-flex-direction: column;
-gap: 10px;
-padding: 10px;
-margin: 10px;
-background-color: #1d292e;
-min-width: 300px;
-border-radius: 20px;  
-border: 5px solid #55646C;
-border-bottom: 9px solid #48555B;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: -70px 10px 10px 10px;
+  background-color: #1d292e;
+  min-width: 300px;
+  border-radius: 20px;  
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
 }
 
 
@@ -496,27 +523,26 @@ border-bottom: 9px solid #48555B;
        cursor: pointer;
    }
 `;
-  document.head.appendChild(style);
+      document.head.appendChild(style);
 
-  rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
-  const btAvancar = document.getElementById("btnNext");
-  btAvancar.addEventListener("click", () => {
-    window.open("../exercicio_desafio/execicio_desafio.html", "_self");
-  });
-  
+      rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
+      const btAvancar = document.getElementById("btnNext");
+      btAvancar.addEventListener("click", () => {
+        window.open("../exercicio_desafio/exercicio_desafio.html", "_self");
+      });
 
-  alternativa1.removeEventListener("click", () => {});
-  alternativa2.removeEventListener("click", () => {});
-  alternativa3.removeEventListener("click", () => {});
-  alternativa4.removeEventListener("click", () => {});
-}, 1000); // Tempo para a transição de opacidade
+      alternativa1.removeEventListener("click", () => {});
+      alternativa2.removeEventListener("click", () => {});
+      alternativa3.removeEventListener("click", () => {});
+      alternativa4.removeEventListener("click", () => {});
+      progressBar.style.width = "87.5%";
+    }, 1000); // Tempo para a transição de opacidade
 
-resultText.textContent = resultado;
-alert(resultText.textContent);
-} else {
-rodape.style.opacity = "0"; // Iniciar a transição de opacidade
-setTimeout(() => {
-  rodape.innerHTML = `
+    returnText.style.color = "#92c255";
+  } else {
+    rodape.style.opacity = "0"; // Iniciar a transição de opacidade
+    setTimeout(() => {
+      rodape.innerHTML = `
     <footer id="rodape">
         <div id="lineFooter"></div>
         <div class="botoes">
@@ -526,9 +552,9 @@ setTimeout(() => {
         </div>
     </footer>
       `;
-  const btnNext = document.getElementById("btnNext");
-  const style = document.createElement("style");
-  style.innerHTML = `@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      const btnNext = document.getElementById("btnNext");
+      const style = document.createElement("style");
+      style.innerHTML = `@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @keyframes fadeIn {
 from {
     opacity: 0;
@@ -579,7 +605,7 @@ border-radius: 50px;
 }
 
 #bar {
-width: 16.6%;
+width: 75%;
 height: 20px;
 border-radius: 10px;
 background-color: #6d5f6d;
@@ -828,15 +854,16 @@ margin: 0 20px 20px 0;
 margin: 19px 0;
 }
 .column{
-flex-direction: column;
-gap: 10px;
-padding: 10px;
-margin: 10px;
-background-color: #1d292e;
-min-width: 300px;
-border-radius: 20px;  
-border: 5px solid #55646C;
-border-bottom: 9px solid #48555B;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: -70px 10px 10px 10px;
+  background-color: #1d292e;
+  min-width: 300px;
+  min-height: 550px;
+  border-radius: 20px;  
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
 }
 
 
@@ -906,23 +933,24 @@ border-bottom: 9px solid #48555B;
 
 
   `;
-  document.head.appendChild(style);
+      document.head.appendChild(style);
 
-  rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
+      rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
 
-  returnText.innerText = "Query Deu erro!!";
+      returnText.innerText = "erro";
+      returnText.style.color = "#EE4035";
 
-  btnNext.addEventListener("click", () => {
-    window.open("../exercicio_5.2/exercicio_5.2.html", "_self");
-  });
-}, 1000); // Tempo para a transição de opacidade
+      btnNext.addEventListener("click", () => {
+        window.open("../exercicio_5.2/exercicio_5.2.html", "_self");
+      });
+    }, 1000); // Tempo para a transição de opacidade
+  }
 }
-}
 
-function verifyOrder(value, order){
-  let orderList = order.split(',');
-  for(let i = 0; i < value.length-1; i++){
-    if(value[i] != orderList[i]){
+function verifyOrder(value, order) {
+  let orderList = order.split(",");
+  for (let i = 0; i < value.length - 1; i++) {
+    if (value[i] != orderList[i]) {
       return false;
     }
   }

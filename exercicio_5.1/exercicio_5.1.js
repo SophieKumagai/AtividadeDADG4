@@ -1,28 +1,44 @@
 // adicionando som
-let audio = new Audio('../assets/batalha.mp3');
+let audio = new Audio("../assets/batalha.mp3");
 
-
-window.addEventListener('load', () => {
-    audio.play();
-})
+window.addEventListener("load", () => {
+  audio.play();
+});
 
 const columns = document.querySelectorAll(".column");
 const resultCollumn = document.querySelectorAll(".aBottom");
 const resultText = document.querySelector("#returnText");
+const rodape = document.querySelector("#rodape");
+const progressBar = document.getElementById("bar");
+
+const btnTip = document.getElementById("btnTip");
+btnTip.addEventListener("click", () => {
+  window.open("../saibaMais/index.html");
+});
+
+const btnSkip = document.getElementById("btnSkip");
+btnSkip.addEventListener("click", () => {
+  const confirmation = window.confirm(
+    "Você tem certeza que deseja pular o exercício?"
+  );
+  if (confirmation) {
+    window.open("../exercicio_5.2/exercicio_5.2.html", "_self");
+  }
+});
 
 document.addEventListener("dragstart", (e) => {
   e.target.classList.add("dragging");
 });
- 
+
 document.addEventListener("dragend", (e) => {
   e.target.classList.remove("dragging");
 });
- 
+
 columns.forEach((item) => {
   item.addEventListener("dragover", (e) => {
     const dragging = document.querySelector(".dragging");
     const applyAfter = getNewPosition(item, e.clientY);
- 
+
     if (applyAfter) {
       applyAfter.insertAdjacentElement("afterend", dragging);
     } else {
@@ -33,36 +49,45 @@ columns.forEach((item) => {
 function getNewPosition(column, posY) {
   const cards = column.querySelectorAll(".alternativa:not(.dragging)");
   let result;
- 
+
   for (let refer_card of cards) {
     const box = refer_card.getBoundingClientRect();
     const boxCenterY = box.y + box.height / 2;
- 
+
     if (posY >= boxCenterY) result = refer_card;
   }
- 
+
   return result;
 }
 function getItemsOrder() {
   //Informação com cada coluna
 
-  let orderInfo = '';
+  let orderInfo = "";
   resultCollumn.forEach((column) => {
     const cards = column.querySelectorAll(".alternativa");
-    const order = [...cards].map(card => card.id).join(",");
+    const order = [...cards].map((card) => card.id).join(",");
     orderInfo += `${order}\n`;
   });
-  if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
-    alert("Right order!");
-    resultText.textContent= JSON.stringify(
-      {
-        "acknowledged": true,
-        "matchedCount": 46,
-        "modifiedCount": 46,
-        "upsertedId": null,
-        "upsertedCount": 0
-      }
+  if (
+    verifyOrder(
+      [
+        "alternativa1",
+        "alternativa2",
+        "alternativa3",
+        "alternativa4",
+        "alternativa5",
+        "alternativa6",
+      ],
+      orderInfo
     )
+  ) {
+    resultText.textContent = `({
+      acknowledged: true,
+      matchedCount: 46,
+      modifiedCount: 46,
+      upsertedId: null,
+      upsertedCount: 0,
+    });`;
     rodape.style.opacity = "0"; // Iniciar a transição de opacidade
     setTimeout(() => {
       rodape.innerHTML = `
@@ -374,11 +399,12 @@ strong {
 #alternativa4 {
   margin: 19px 0;
 }
+
 .column{
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-  margin: 10px;
+  margin: -70px 10px 10px 10px;
   background-color: #1d292e;
   min-width: 300px;
   border-radius: 20px;  
@@ -465,10 +491,10 @@ strong {
       alternativa2.removeEventListener("click", () => {});
       alternativa3.removeEventListener("click", () => {});
       alternativa4.removeEventListener("click", () => {});
+      progressBar.style.width = "75%";
     }, 1000); // Tempo para a transição de opacidade
 
-    resultText.textContent = resultado;
-    alert(resultText.textContent);
+    returnText.style.color = "#92c255";
   } else {
     rodape.style.opacity = "0"; // Iniciar a transição de opacidade
     setTimeout(() => {
@@ -783,18 +809,19 @@ strong {
 #alternativa4 {
   margin: 19px 0;
 }
+
 .column{
   flex-direction: column;
   gap: 10px;
   padding: 10px;
-  margin: 10px;
+  margin: -70px 10px 10px 10px;
   background-color: #1d292e;
   min-width: 300px;
+  min-height: 550px;
   border-radius: 20px;  
   border: 5px solid #55646C;
   border-bottom: 9px solid #48555B;
 }
-
 
 #alternativa1:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
 #alternativa2:hover { background-color: #1d292e; transition: 100ms; cursor: pointer;}
@@ -866,7 +893,8 @@ strong {
 
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
 
-      returnText.innerText = "Query Deu erro!!";
+      returnText.innerText = "erro";
+      returnText.style.color = "#EE4035";
 
       btnNext.addEventListener("click", () => {
         window.open("../exercicio_5.1/exercicio_5.1.html", "_self");
@@ -874,10 +902,10 @@ strong {
     }, 1000); // Tempo para a transição de opacidade
   }
 }
-function verifyOrder(value, order){
-  let orderList = order.split(',');
-  for(let i = 0; i < value.length-1; i++){
-    if(value[i] != orderList[i]){
+function verifyOrder(value, order) {
+  let orderList = order.split(",");
+  for (let i = 0; i < value.length - 1; i++) {
+    if (value[i] != orderList[i]) {
       return false;
     }
   }

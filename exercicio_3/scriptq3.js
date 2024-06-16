@@ -14,6 +14,24 @@ const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
 const returnText = document.getElementById("returnText");
 
+
+const btnTip = document.getElementById("btnTip");
+btnTip.addEventListener("click", () => {
+  window.open("../saibaMais/index.html");
+});
+
+
+const btnSkip = document.getElementById("btnSkip");
+btnSkip.addEventListener("click", () => {
+  const confirmation = window.confirm("Você tem certeza que deseja pular o exercício?");
+  if (confirmation) {
+    window.open("../exercicio_4.1/exercicio_4.1.html", "_self");
+  }
+});
+
+
+
+
 btnVerify.addEventListener("click", () => {
   const rodape = document.getElementById("rodape");
 
@@ -136,7 +154,7 @@ btnVerify.addEventListener("click", () => {
        }
        
       #bar {
-        width: 36%;
+        width: 25%;
         height: 20px;
         border-radius: 10px;
         background-color: #6d5f6d;
@@ -454,7 +472,7 @@ btnVerify.addEventListener("click", () => {
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
       const btAvancar = document.getElementById("btnNext");
       btAvancar.addEventListener("click", () => {
-        window.open("../exercicio_4/indexq4.html", "_self");
+        window.open("../exercicio_4.1/exercicio_4.1.html", "_self");
       })
 
       alternativa1.removeEventListener("click", () => {});
@@ -595,7 +613,7 @@ btnVerify.addEventListener("click", () => {
        }
        
       #bar {
-        width: 36%;
+        width: 25%;
         height: 20px;
         border-radius: 10px;
         background-color: #6d5f6d;

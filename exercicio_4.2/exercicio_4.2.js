@@ -9,6 +9,26 @@ window.addEventListener('load', () => {
 const columns = document.querySelectorAll(".column");
 const resultCollumn = document.querySelectorAll(".aBottom");
 const resultText = document.querySelector("#returnText");
+const rodape = document.querySelector("#rodape");
+const progressBar = document.getElementById("bar");
+
+
+const btnTip = document.getElementById("btnTip");
+btnTip.addEventListener("click", () => {
+  window.open("../saibaMais/index.html");
+});
+
+
+const btnSkip = document.getElementById("btnSkip");
+btnSkip.addEventListener("click", () => {
+  const confirmation = window.confirm("Você tem certeza que deseja pular o exercício?");
+  if (confirmation) {
+    window.open("../exercicio_5.1/exercicio_5.1.html", "_self");
+  }
+});
+
+
+
 
 document.addEventListener("dragstart", (e) => {
   e.target.classList.add("dragging");
@@ -53,30 +73,6 @@ function getItemsOrder() {
     orderInfo += `${order}\n`;
   });
   if(verifyOrder(["alternativa1","alternativa2", "alternativa3","alternativa4", "alternativa5", "alternativa6"], orderInfo)){
-    alert("Right order!");
-  var resultado = JSON.stringify(
-    {
-      nome: "Snorlax",
-      tipo1: "Normal",
-      tipo2: null,
-      peso: 460.0,
-      altura: 2.1
-      },
-      {
-      nome: "Gyarados",
-      tipo1: "Água",
-      tipo2: "Voador",
-      peso: "235,0 kg",
-      altura: "6,5 m"
-      },
-      {
-      nome: "Lapras",
-      tipo1: "Água",
-      tipo2: "Gelo",
-      peso: "220,0 kg",
-      altura: "2,5 m"
-      }
-  ) 
   rodape.style.opacity = "0"; // Iniciar a transição de opacidade
   setTimeout(() => {
     rodape.innerHTML = `
@@ -140,7 +136,7 @@ border-radius: 50px;
 }
 
 #bar {
-width: 16.6%;
+width: 50%;
 height: 20px;
 border-radius: 10px;
 background-color: #6d5f6d;
@@ -389,15 +385,15 @@ margin: 0 20px 20px 0;
 margin: 19px 0;
 }
 .column{
-flex-direction: column;
-gap: 10px;
-padding: 10px;
-margin: 10px;
-background-color: #1d292e;
-min-width: 300px;
-border-radius: 20px;  
-border: 5px solid #55646C;
-border-bottom: 9px solid #48555B;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: -70px 10px 10px 10px;
+  background-color: #1d292e;
+  min-width: 300px;
+  border-radius: 20px;  
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
 }
 
 
@@ -479,10 +475,36 @@ border-bottom: 9px solid #48555B;
     alternativa2.removeEventListener("click", () => {});
     alternativa3.removeEventListener("click", () => {});
     alternativa4.removeEventListener("click", () => {});
+    progressBar.style.width = "62.5%";
   }, 1000); // Tempo para a transição de opacidade
 
-  resultText.textContent = resultado;
-  alert(resultText.textContent);
+  resultText.textContent = 
+  `
+  {
+      nome: "Snorlax",
+      tipo1: "Normal",
+      tipo2: null,
+      peso: 460.0,
+      altura: 2.1
+      },
+      {
+      nome: "Gyarados",
+      tipo1: "Água",
+      tipo2: "Voador",
+      peso: "235,0 kg",
+      altura: "6,5 m"
+      },
+      {
+      nome: "Lapras",
+      tipo1: "Água",
+      tipo2: "Gelo",
+      peso: "220,0 kg",
+      altura: "2,5 m"
+      }
+      `;
+
+      returnText.style.color = "#92c255";
+
 } else {
   rodape.style.opacity = "0"; // Iniciar a transição de opacidade
   setTimeout(() => {
@@ -549,7 +571,7 @@ border-radius: 50px;
 }
 
 #bar {
-width: 16.6%;
+width: 50%;
 height: 20px;
 border-radius: 10px;
 background-color: #6d5f6d;
@@ -797,16 +819,17 @@ margin: 0 20px 20px 0;
 #alternativa4 {
 margin: 19px 0;
 }
+
 .column{
-flex-direction: column;
-gap: 10px;
-padding: 10px;
-margin: 10px;
-background-color: #1d292e;
-min-width: 300px;
-border-radius: 20px;  
-border: 5px solid #55646C;
-border-bottom: 9px solid #48555B;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin: -70px 10px 10px 10px;
+  background-color: #1d292e;
+  min-width: 300px;
+  border-radius: 20px;  
+  border: 5px solid #55646C;
+  border-bottom: 9px solid #48555B;
 }
 
 
@@ -880,7 +903,8 @@ border-bottom: 9px solid #48555B;
 
     rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
 
-    returnText.innerText = "Query Deu erro!!";
+    returnText.innerText = "erro";
+    returnText.style.color = "#EE4035";
 
     btnNext.addEventListener("click", () => {
       window.open("../exercicio_4.2/exercicio_4.2.html", "_self");

@@ -12,7 +12,6 @@
     <header class="header">
         <div class="logo"><img id="logo" src="../assets/logo.png" alt="Logo PokeMongo"></div>
         <div id="pokebola">
-            <p id="textVida">Suas vidas:</p>
             <img id="pokevida1" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida2" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida3" class="pokevida" src="../assets/pokebola.png" alt="">
@@ -30,12 +29,15 @@
         <div class="return">
             <div id="returnBox">
                 <div id="returnHead">Retorno</div>
+                <p id="returnText"></p>
             </div>
         </div>
 
         <div id="professor">
             <div class="dialogBox">
-                <div id="box"><p class="fadeInText">um estudante veio ao laboratório e pediu para que você cadastrasse os pokemón que ele capturou em sua PC Box: <br><strong>“Diglett”, “terra”, “”, “0.8”, “0.2”</p></strong></div>
+                <div id="box"><p class="fadeInText">Utilizando a operação de agregação do MongoDB, você pode encontrar mais informações sobre ela no 
+                    <br><strong><a href="https://www.mongodb.com/docs/manual/aggregation/">SITE OFICIAL DE DOCUMENTAÇÃO MONGO</a></strong><br>
+                    conte quantos pokemon há em cada tipo principal.</div>
             </div>
             <img id="prof" src="../assets/profOAK.png" alt="Professor OAK">
             <div>
@@ -45,8 +47,8 @@
                         <div id="alternativa2" class="alternativa" draggable="true">{</div>
                         <div id="alternativa1" class="alternativa" draggable="true">db.pokemons.aggregate([</div>
                         <div id="alternativa4" class="alternativa" draggable="true">}</div>
-                        <div id="alternativa6" class="alternativa" draggable="true">]</div>
-                        <div id="alternativa5" class="alternativa" draggable="true">])</div>
+                        <div id="alternativa5" class="alternativa" draggable="true">]</div>
+                        <div id="alternativa6" class="alternativa" draggable="true">)</div>
 
                     </div>
                     <div class="aBottom column">
@@ -63,7 +65,7 @@
         <div id="lineFooter"></div>
         <div class="botoes">
             <div id="btnSkip">Pular</div>
-            <div id="btnTip"><img src="../assets/lightbulb-02.png" alt=""> Use dica</div>
+            <div id="btnTip">Saiba Mais</div>
             <div id="btnVerify" onclick="getItemsOrder()">Verificar</div>
         </div>
     </footer>

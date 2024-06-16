@@ -12,7 +12,6 @@
     <header class="header">
         <div class="logo"><img id="logo" src="../assets/logo.png" alt="Logo PokeMongo"></div>
         <div id="pokebola">
-            <p id="textVida">Suas vidas:</p>
             <img id="pokevida1" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida2" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida3" class="pokevida" src="../assets/pokebola.png" alt="">
@@ -46,11 +45,15 @@
                 <div class="alternativasDiv">
                     <div class="aTop">
                         <div id="alternativa1" class="alternativa">db.pokemon.updateMany( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
+                        <div id="alternativa1Selected"></div>
                         <div id="alternativa2" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa2Selected"></div>
                     </div>
                     <div class="aBottom">
                         <div id="alternativa3" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
+                        <div id="alternativa3Selected"></div>
                         <div id="alternativa4" class="alternativa">db.pokemon.find( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa4Selected"></div>
                     </div>
                 </div>
             </alternativas>

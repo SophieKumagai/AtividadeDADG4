@@ -14,6 +14,19 @@ const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
 const returnText = document.getElementById("returnText");
 
+const btnTip = document.getElementById("btnTip");
+btnTip.addEventListener("click", () => {
+  window.open("../saibaMais/index.html");
+});
+
+const btnSkip = document.getElementById("btnSkip");
+btnSkip.addEventListener("click", () => {
+  const confirmation = window.confirm("Você tem certeza que deseja pular o exercício?");
+  if (confirmation) {
+    window.open("../exercicio_3/indexq3.html", "_self");
+  }
+});
+
 btnVerify.addEventListener("click", () => {
   const rodape = document.getElementById("rodape");
 
@@ -136,7 +149,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 16.6%;
+         width: 12.5%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
@@ -606,7 +619,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 16.6%;
+         width: 12.5%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
