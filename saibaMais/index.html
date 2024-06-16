@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saiba Mais</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>
+            MongoDB <img src="../assets/mongo.png" alt="mongo">
+        </h1>
+    </header>
+
+    <main>
+        <input type="text" name="" id="pesquisa" placeholder="Digite a sua pesquisa">
+        <p id="nenhum" class="invisivel">Nenhum tópico encontrado</p>
+        <div class="card tema" id="geral">MongoDB <img src="../assets/mongo.png" alt="mongo"></div>
+        <div class="lista-conteudos invisivel" id="conteudo-geral">
+            <h4>O que é?</h4>
+            <br>
+            <p>MongoDB é um banco de dados NoSQL orientado a documentos, desenvolvido para ser escalável, flexível e de alta performance. Utiliza documentos JSON-like (BSON, Binary JSON) para armazenar dados, o que permite estruturas de dados flexíveis e esquemas dinâmicos.</p>
+            <br>
+            <h4>Principais características</h4>
+            <br>
+            <ul>
+                <li>Modelo de Dados Flexível: Os documentos no MongoDB podem ter estruturas variadas, o que facilita a evolução dos esquemas de dados sem alterações complexas.</li>
+                <li>Escalabilidade: Suporta escalabilidade horizontal através da distribuição de dados em clusters (sharding) e replicação para alta disponibilidade.</li>
+                <li>Consultas Ricas: Suporta consultas complexas e ad hoc, incluindo consultas por campo, faixas de valores, consultas geoespaciais, entre outras.</li>
+                <li>Índices: Permite a criação de índices secundários para otimizar consultas e operações de ordenação.</li>
+                <li>Aggregation Framework: Framework poderoso para realizar operações de agregação de dados, como agrupamento, projeção e filtros complexos.</li>
+                <li>GridFS: Sistema de armazenamento e recuperação de arquivos de grande tamanho, dividindo-os em chunks para facilitar a manipulação.</li>
+                <li>Transações: Suporta transações ACID em nível de documento, garantindo atomicidade, consistência, isolamento e durabilidade. </li>
+            </ul>
+            <br>
+            <h4>Ecossistemas</h4>
+            <br>
+            <p>MongoDB é suportado por uma ampla variedade de ferramentas e frameworks, incluindo drivers para várias linguagens de programação, ORMs (Object-Relational Mappers), e integração com plataformas de nuvem como AWS, Azure e Google Cloud.</p>
+        </div>
+        <div class="card tema" id="config">Configurações <img src="../assets/configuracao.png" alt="configurações"></div>
+        <div class="lista-conteudos invisivel" id="conteudo-config">
+            <iframe src="https://www.mongodb.com/docs/guides/" frameborder="0.5"></iframe>  
+        </div>
+        <div class="card tema" id="conceitos">Conceitos Básicos <img src="../assets/db.png" alt="conceitos"></div>
+        <div class="lista-conteudos invisivel" id="conteudo-conceitos">
+            <h4><strong>Database (Banco de Dados)</strong></h4>
+            <br>
+            <p>Um database em MongoDB é um contêiner para coleções. Ele agrupa coleções relacionadas entre si.</p>
+            <br>
+            <h4>Principais características</h4>
+            <br>
+            <ul>
+                <li>Cada banco de dados tem seu próprio conjunto de arquivos no sistema de arquivos.</li>
+                <li>Um servidor MongoDB pode hospedar múltiplos bancos de dados, cada um independente dos outros.</li>
+                <li>Bancos de dados são isolados entre si, proporcionando um nível de separação e organização dos dados.</li>
+            </ul>
+            <br>
+            <h4><strong>Collection (Coleção)</strong></h4>
+            <br>
+            <p>Uma collection é um agrupamento de documentos dentro de um banco de dados. É análoga a uma tabela em bancos de dados relacionais.</p>
+            <br>
+            <h4>Principais características</h4>
+            <br>
+            <ul>
+                <li>Coleções existem dentro de bancos de dados.</li>
+                <li>Diferente das tabelas em RDBMS, coleções não têm esquema rígido, permitindo que documentos dentro de uma coleção tenham diferentes campos e estruturas.</li>
+                <li>Coleções são utilizadas para organizar documentos de forma lógica.</li>
+            </ul>
+            <br>
+            <h4><strong>Document (Documento)</strong></h4>
+            <br>
+            <p>Um documento é a unidade básica de dados no MongoDB. Ele é uma estrutura de dados composta por pares de chave-valor, similar a um objeto JSON.</p>
+            <br>
+            <h4>Principais características</h4>
+            <br>
+            <ul>
+                <li>Documentos são armazenados em coleções.</li>
+                <li>Cada documento tem uma estrutura flexível e pode conter aninhamentos complexos de dados (subdocumentos e arrays).</li>
+                <li>Todos os documentos em uma coleção são identificados de forma única pelo campo <em>_id</em>.</li>
+            </ul>
+            <br>
+            <h4><strong>Relação entre Database, Collection e Documento
+            </strong></h4>
+            <br>
+            <ul>
+                <li>Database: Contém múltiplas coleções.</li>
+                <li>Collection: Contém múltiplos documentos.</li>
+                <li>Documento: Contém dados reais organizados em pares de chave-valor.</li>
+            </ul>
+            <br>
+            <h4><strong>Exemplo:</strong></h4>
+            <pre>
+                <code>
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "titulo": "MongoDB: O Guia Completo",
+    "autor": "Sophie Kumagai",
+    "ano_publicacao": 2024,
+    "generos": ["Database", "NoSQL"],
+    "copias": [
+        { "edicao": "primeira", "copias_disponiveis": 3 },
+        { "edicao": "segunda", "copias_disponiveis": 5 }
+    ]
+}               
+                </code>
+            </pre>
+        </div>
+        <div class="card tema" id="comandos">Comandos Básicos <img src="../assets/comandos.png" id="comandos-icon" alt="comandos"></div>
+        <div class="lista-conteudos invisivel" id="conteudo-comandos">
+            <h4><strong>Inserir documentos</strong></h4>
+            <br>
+            <p>A operação insert é essencial no MongoDB, possibilitando a adição de novos documentos em uma coleção.</p>
+            <p>Documentos no MongoDB são estruturas de dados flexíveis compostas por pares chave-valor, semelhantes a objetos JSON.</p>
+            <br>
+            <h4>InsertOne</h4>
+            <br>
+            <p>Este método insere um único documento em uma coleção.</p>
+            <pre>
+                <code>
+db.pokemons.insertOne({
+    nome: "Pikachu",
+    tipo: "Elétrico",
+    nível: 25,
+    peso: 6.0, // em kg
+    altura: 0.4 // em metros
+})
+                </code>
+            </pre>
+            <h4>InsertMany</h4>
+            <pre>
+                <code>
+db.pokemons.insertMany([
+    {
+        nome: "Bulbasaur",
+        tipo: "Planta",
+        nível: 15,
+        peso: 6.9, // em kg
+        altura: 0.7 // em metros
+    },
+    {
+        nome: "Charmander",
+        tipo: "Fogo",
+        nível: 16,
+        peso: 8.5, // em kg
+        altura: 0.6 // em metros
+    },
+    {
+        nome: "Squirtle",
+        tipo: "Água",
+        nível: 14,
+        peso: 9.0, // em kg
+        altura: 0.5 // em metros
+    }
+])            
+                </code>
+            </pre>
+            <h4>Considerações importantes</h4>
+            <br>
+            <ul>
+                <li>Chave _id: Cada documento no MongoDB possui uma chave única _id. Se não for especificada, o MongoDB a gerará automaticamente.</li>
+                <li>Performance: Usar insertMany() é mais eficiente do que múltiplos insertOne(), pois reduz a sobrecarga de comunicação com o servidor.</li>
+                <li>Validação de Esquema: MongoDB permite a criação de esquemas que validam a estrutura dos documentos, garantindo a integridade dos dados.</li>
+            </ul>
+            <br>
+            <h4>Exceções e Erros Comuns</h4>
+            <br>
+            <ul>
+                <li>Duplicidade de Chaves: Inserir um documento com uma chave _id existente resulta em um erro.</li>
+                <li>Erros de Conexão: Assegure-se de que a conexão com o banco de dados está estável para evitar falhas na inserção.</li>
+            </ul>
+        
+            <br>
+            <h4><strong>Consultar documentos</strong></h4>
+            <br>
+            <p>A operação de select no MongoDB é realizada com consultas que permitem buscar e visualizar documentos em uma coleção.</p>
+            <p>No MongoDB, a operação select é realizada utilizando a função find(), que permite buscar e retornar documentos de uma coleção com base em critérios específicos. Com o find(), você pode realizar consultas simples ou complexas, filtrando, ordenando e limitando os resultados conforme necessário.</p>
+            <br>
+            <h4>Find</h4>
+            <br>
+            <p>Este método retorna todos os documentos que correspondem aos critérios de filtro.</p>
+            <br>
+            <p>Vamos buscar todos os Pokémon de tipo "Elétrico" na coleção pokemons:</p>
+            <pre>
+                <code>
+db.pokemons.find({ tipo: "Elétrico" })
+
+// Resultado esperado
+[
+    { nome: "Pikachu", tipo: "Elétrico", nível: 25, peso: 6.0, altura: 0.4 },
+    { nome: "Electabuzz", tipo: "Elétrico", nível: 30, peso: 30.0, altura: 1.1 }
+]                                    
+                </code>
+            </pre>
+            <h4>FindOne</h4>
+            <br>
+            <p>Este método retorna apenas o primeiro documento que corresponda aos critários de filtro.</p>
+            <br>
+            <p>Vamos buscar um Pokémon específico chamado "Charmander":</p>
+            <pre>
+                <code>
+db.pokemons.findOne({ nome: "Charmander" })
+
+// Resultado esperado
+{ nome: "Charmander", tipo: "Fogo", nível: 16, peso: 8.5, altura: 0.6 }                                   
+                </code>
+            </pre>
+            <h4>Operadores de Consulta</h4>
+            <br>
+            <p>Os operadores de consulta no MongoDB permitem filtrar dados de maneira avançada.</p>
+            <br>
+            <ul>
+                <li>
+                    <h4>Operador $gt (maior que)</h4> <br> <p>Este operador é usado para buscar valores maiores que o especificado.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon com nível maior que 20:</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ nível: { $gt: 20 } })                                  
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $lt (menor que)</h4> <br> <p>Este operador é usado para buscar valores menores que o especificado.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon com peso menor que 10 kg:</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ peso: { $lt: 10 } })                                  
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $in (em)</h4> <br> <p>Este operador é usado para buscar valores que estão em um array especificado.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon que são do tipo "Fogo" ou "Água":</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ tipo: { $in: ["Fogo", "Água"] } })                                 
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $and (e)</h4> <br> <p>Este operador é usado para combinar múltiplas condições que devem ser verdadeiras.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon que são do tipo "Planta" e têm um nível maior que 10:</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ $and: [{ tipo: "Planta" }, { nível: { $gt: 10 } }] })                                  
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $or (ou)</h4> <br> <p>Este operador é usado para combinar múltiplas condições onde pelo menos uma deve ser verdadeira.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon que são do tipo "Elétrico" ou têm um peso menor que 5 kg:</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ $or: [{ tipo: "Elétrico" }, { peso: { $lt: 5 } }] })                                 
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $regex (expressão regular)</h4> <br> <p>Este operador é usado para buscar padrões específicos em strings.</p>
+                    <br>
+                    <p>Vamos buscar todos os Pokémon cujo nome começa com "Ch":</p>
+                    <pre>
+                        <code>
+db.pokemons.find({ nome: { $regex: "^Ch" } })                              
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+            <br>
+            <h4>Considerações Importantes</h4>
+            <br>
+            <ul>
+                <li>Filtros Flexíveis: MongoDB permite combinar vários operadores de consulta para criar filtros complexos.</li>
+                <li>Projeção de Campos: Você pode especificar quais campos deseja incluir ou excluir dos resultados usando projeção.</li>
+                <li>Ordenação e Limitação: Utilize .sort() e .limit() para ordenar e limitar os resultados da consulta, respectivamente.</li>
+                <li>Os operadores de consulta que mencionamos são apenas a ponta do iceberg! MongoDB oferece uma vasta gama de operadores que podem ajudar a filtrar e manipular seus dados de maneiras sofisticadas. Para explorar todos os operadores disponíveis e ver exemplos detalhados, visite a <a href="https://www.mongodb.com/pt-br/docs/manual/crud/">documentação oficial do MongoDB</a> sobre consultas.</li>
+            </ul>
+
+            <br>
+            <h4><strong>Atualizar documentos</strong></h4>
+            <br>
+            <p>A operação update no MongoDB é usada para modificar documentos existentes em uma coleção. Você pode atualizar campos específicos, adicionar novos campos ou substituir completamente um documento. A operação de update pode ser feita de várias maneiras, dependendo das necessidades específicas.</p>
+            <br>
+            <h4>UpdateOne</h4>
+            <br>
+            <p>Este método atualiza o primeiro documento que corresponde a um critério de filtro.</p>
+            <pre>
+                <code>
+db.pokemons.updateOne(
+    { nome: "Pikachu" },
+    { $set: { peso: 6.2 } } // Atualiza o peso para 6.2 kg
+)
+                </code>
+            </pre>
+            <h4>UpdateMany</h4>
+            <br>
+            <p>Este método atualiza todos os documentos que correspondem a um critério de filtro. Ele é útil para atualizar múltiplos documentos de uma só vez. </p>
+            <pre>
+                <code>
+db.pokemons.updateMany(
+    { tipo: "Normal" },
+    { $set: { tipo: "Normal/Fada" } } // Atualiza o tipo para "Normal/Fada"
+)
+                </code>
+            </pre>
+            <h4>Operadores de Atualização</h4>
+            <br>
+            <p>Os operadores de atualização do MongoDB permitem modificar documentos dentro de uma coleção.</p>
+            <br>
+            <ul>
+                <li>
+                    <h4>Operador $unset</h4> <br> <p>Remove um campo de um documento.</p>
+                    <br>
+                    <p>Remover o campo "peso" do Charizard:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Charizard" },
+    { $unset: { "peso": "" } }
+)                             
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $inc</h4> <br> <p>Incrementa o valor de um campo numérico por uma quantidade especificada.</p>
+                    <br>
+                    <p>Incrementar o nível do Bulbasaur em 1:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Bulbasaur" },
+    { $inc: { "nivel": 1 } }
+)                                
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $rename</h4> <br> <p>Renomeia um campo em um documento.</p>
+                    <br>
+                    <p>Renomear o campo "altura" para "altura_cm" no documento do Jigglypuff:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Jigglypuff" },
+    { $rename: { "altura": "altura_cm" } }
+)                                 
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $push</h4> <br> <p>Adiciona um valor a um array. Se o campo não existir, ele será criado.</p>
+                    <br>
+                    <p>Adicionar um novo ataque ao Squirtle:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Squirtle" },
+    { $push: { "ataques": "Hidro Bomba" } }
+)                              
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $pull</h4> <br> <p>Remove todos os elementos de um array que correspondem a uma condição especificada.</p>
+                    <br>
+                    <p>Remover o ataque "Investida" do Charmander:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Charmander" },
+    { $pull: { "ataques": "Investida" } }
+)                            
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $addToSet</h4> <br> <p>Adiciona um valor a um array somente se o valor ainda não existir no array.</p>
+                    <br>
+                    <p>Adicionar o ataque "Chama" ao Growlithe, se ainda não estiver presente:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Growlithe" },
+    { $addToSet: { "ataques": "Chama" } }
+)                             
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $pop</h4> <br> <p>Remove o primeiro ou último elemento de um campo de array. Especifique -1 para remover o primeiro elemento e 1 para remover o último elemento.</p>
+                    <br>
+                    <p>Remover o último ataque do Pidgey:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Pidgey" },
+    { $pop: { "ataques": 1 } }
+)                        
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $min</h4> <br> <p>Atualiza o campo se o valor especificado for menor que o valor atual do campo.</p>
+                    <br>
+                    <p>Definir a menor quantidade de CP do Mewtwo, se for menor que o valor atual:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Mewtwo" },
+    { $min: { "cp": 2000 } }
+)              
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <h4>Operador $max</h4> <br> <p>Atualiza o campo se o valor especificado for maior que o valor atual do campo.</p>
+                    <br>
+                    <p>Definir a maior quantidade de CP do Mew, se for maior que o valor atual:</p>
+                    <pre>
+                        <code>
+db.pokemon.updateOne(
+    { "nome": "Mew" },
+    { $max: { "cp": 3000 } }
+)                          
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+            <br>
+            <h4>Considerações importantes</h4>
+            <br>
+            <ul>
+                <li>Upsert: Adicionar a opção upsert: true cria um novo documento se nenhum documento correspondente for encontrado.</li>
+                <li>Atomaridade: As operações de update no MongoDB são atômicas no nível do documento, garantindo consistência durante a atualização.</li>
+                <li>Os operadores de atualização que mencionamos são apenas a ponta do iceberg! MongoDB oferece uma vasta gama de operadores que podem ajudar a modificar seus dados de maneiras sofisticadas. Para explorar todos os operadores disponíveis e ver exemplos detalhados, visite a <a href="https://www.mongodb.com/pt-br/docs/manual/crud/">documentação oficial do MongoDB</a> sobre atualizações.</li>
+            </ul>
+            <br>
+            <h4>Exceções e Erros Comuns</h4>
+            <br>
+            <ul>
+                <li>Filtros Impróprios: Se o filtro não corresponder a nenhum documento, a operação de update não terá efeito a menos que a opção upsert seja usada.</li>
+            </ul>
+
+            <br>
+            <h4><strong>Deletar documentos</strong></h4>
+            <br>
+            <p>A operação delete no MongoDB permite remover documentos de uma coleção com base em critérios específicos. Você pode deletar um único documento ou múltiplos documentos que correspondam aos critérios definidos.</p>
+            <br>
+            <h4>DeleteOne</h4>
+            <br>
+            <p>Este método remove o primeiro documento que corresponde a um critério de filtro.</p>
+            <pre>
+                <code>
+db.pokemons.deleteOne({ nome: "Pikachu" })
+                </code>
+            </pre>
+            <h4>DeleteMany</h4>
+            <br>
+            <p>Este método remove todos os documentos que correspondem a um critério de filtro. Ele é útil para remover múltiplos documentos de uma só vez.</p>
+            <pre>
+                <code>
+db.pokemons.deleteMany({ tipo: "Normal" })
+                </code>
+            </pre>
+            <h4>Considerações importantes</h4>
+            <br>
+            <ul>
+                <li>Critérios de Filtro: É crucial definir corretamente os critérios de filtro para evitar a remoção acidental de documentos não desejados.</li>
+                <li>Backup: Sempre considere fazer backup dos dados antes de realizar operações de exclusão, especialmente ao usar deleteMany().</li>
+                <li>Desempenho: Remover muitos documentos de uma vez pode afetar o desempenho do banco de dados temporariamente.</li>
+            </ul>
+            <br>
+            <h4>Exceções e Erros Comuns</h4>
+            <br>
+            <ul>
+                <li>Filtros Impróprios: Se o filtro não corresponder a nenhum documento, a operação de update não terá efeito a menos que a opção upsert seja usada.</li>
+            </ul>
+    </main>
+    <img src="../assets/pikachu.png" alt="pikachu" id="pikachu">
+    <img src="../assets/lapras.png" alt="lapras" id="lapras">
+</body>
+</html>
