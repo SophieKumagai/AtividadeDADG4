@@ -14,14 +14,12 @@ const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
 const returnText = document.getElementById("returnText");
 
-progressBar.classList.add("none");
-
 btnVerify.addEventListener("click", () => {
   const rodape = document.getElementById("rodape");
 
   if (qSelect == 0) {
     window.alert("Selecione uma alternativa");
-  } else if (qSelect == 2) {
+  } else if (qSelect == 1) {
     rodape.style.opacity = "0"; // Iniciar a transição de opacidade
     setTimeout(() => {
       progressBar.classList.remove("none");
@@ -33,9 +31,8 @@ btnVerify.addEventListener("click", () => {
                   <div id="btnNext">Avançar</div>
               </div>
           `;
-
+  
       const style = document.createElement("style");
-
       style.innerHTML = `
           /* http://meyerweb.com/eric/tools/css/reset/ 
           v2.0 | 20110126
@@ -139,7 +136,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 12.5%;
+         width: 16.6%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
@@ -451,25 +448,41 @@ btnVerify.addEventListener("click", () => {
        
           `;
       document.head.appendChild(style);
-
+  
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
       const btAvancar = document.getElementById("btnNext");
       btAvancar.addEventListener("click", () => {
-        window.open("../exercicio_2/indexq2.html", "_self");
-      });
+        window.open("../exercicio_3/indexq3.html", "_self");
+      })
 
       alternativa1.removeEventListener("click", () => {});
       alternativa2.removeEventListener("click", () => {});
       alternativa3.removeEventListener("click", () => {});
       alternativa4.removeEventListener("click", () => {});
 
-      returnText.innerText = `
-{
-  "acknowledged": true,
-  "insertedId": ObjectId("50"),
-}
+      returnText.innerText = 
+      `
+      {
+  "_id": ObjectId("1"),
+  "nome": "Bulbasaur",
+  "tipo1": "Grass",
+  "tipo2": "Poison",
+  "peso": 6.9,
+  "altura": 0.7,
+  "stats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "speed": 45,
+    "special_attack": 65,
+    "special_defense": 65
+  }
 
-`;
+
+      `
+
+      progressBar.style.width = "25%";
+
     }, 1000); // Tempo para a transição de opacidade
   } else {
     const alternativas = document.querySelectorAll(".alternativa");
@@ -593,7 +606,7 @@ btnVerify.addEventListener("click", () => {
        }
        
        #bar {
-         width: 12.5%;
+         width: 16.6%;
          height: 20px;
          border-radius: 10px;
          background-color: #6d5f6d;
@@ -964,40 +977,31 @@ btnVerify.addEventListener("click", () => {
       alternativa3.removeEventListener("click", () => {});
       alternativa4.removeEventListener("click", () => {});
 
-      if (qSelect == 1) {
-        returnText.innerText = `
-          {
-          "acknowledged": true,
-          "matchedCount": 0,
-          "modifiedCount": 0
-          }
-
-        `;
-        // setando a cor vermelha no texto do return
+      if (qSelect == 2) {
+        returnText.innerText = " {retornou vazio} ";
         returnText.style.color = "#EE4035";
       }
+      
       if (qSelect == 3) {
-        returnText.innerText = `
-          {
-            "acknowledged": true,
-            "matchedCount": 0,
-            "modifiedCount": 0
-          }
-
-        `;
+        returnText.innerText = " {retornou vazio} ";
         returnText.style.color = "#EE4035";
       }
+      
       if (qSelect == 4) {
         returnText.innerText = "[]";
         returnText.style.color = "#EE4035";
       }
-
+      
       btnNext.addEventListener("click", () => {
-        window.open("./indexq1.html", "_self");
-      });
+        window.open("./indexq2.html", "_self");
+      })
+
     }, 1000); // Tempo para a transição de opacidade
   }
 });
+
+
+
 
 alternativa1Selected.classList.add("none");
 alternativa2Selected.classList.add("none");
@@ -1006,13 +1010,15 @@ alternativa4Selected.classList.add("none");
 
 let qSelect = 0;
 
+
+
 function selecaoDeAlternativas() {
   alternativa1.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 1;
       alternativa1Selected.classList.remove("none");
       alternativa1.classList.add("alternativa1Select");
-    } else if (qSelect == 1) {
+    } else if ( qSelect == 1 ) {
       qSelect = 0;
       alternativa1Selected.classList.add("none");
       alternativa1.classList.remove("alternativa1Select");
@@ -1020,11 +1026,11 @@ function selecaoDeAlternativas() {
   });
 
   alternativa2.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 2;
       alternativa2Selected.classList.remove("none");
       alternativa2.classList.add("alternativa2Select");
-    } else if (qSelect == 2) {
+    } else if ( qSelect == 2 ) {
       qSelect = 0;
       alternativa2Selected.classList.add("none");
       alternativa2.classList.remove("alternativa2Select");
@@ -1032,11 +1038,11 @@ function selecaoDeAlternativas() {
   });
 
   alternativa3.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 3;
       alternativa3Selected.classList.remove("none");
       alternativa3.classList.add("alternativa3Select");
-    } else if (qSelect == 3) {
+    } else if ( qSelect == 3 ) {
       qSelect = 0;
       alternativa3Selected.classList.add("none");
       alternativa3.classList.remove("alternativa3Select");
@@ -1044,130 +1050,17 @@ function selecaoDeAlternativas() {
   });
 
   alternativa4.addEventListener("click", () => {
-    if (qSelect == 0) {
+    if ( qSelect == 0 ) {
       qSelect = 4;
       alternativa4Selected.classList.remove("none");
       alternativa4.classList.add("alternativa4Select");
-    } else if (qSelect == 4) {
+    } else if ( qSelect == 4 ) {
       qSelect = 0;
       alternativa4Selected.classList.add("none");
       alternativa4.classList.remove("alternativa4Select");
     }
   });
+
 }
 
 selecaoDeAlternativas();
-// adicionando som
-let audio = new Audio('../assets/batalha.mp3');
-let audio2 = new Audio('../assets/home.mp3');
-const circle = document.querySelector("#circle_obj")
-const container = document.querySelector("#circle")
-
-window.addEventListener('load', () => {
-    audio.play();
-})
-    const verif = localStorage.getItem("tutorial")
-    if (verif == "entrou") {
-        setTimeout(function(){
-            circle.classList.remove("invisivel")
-            circle.classList.remove("circleGrow")
-            circle.classList.add("circleShrink")
-            setTimeout(function() {
-                circle.classList.add("invisivel")
-                container.classList.add("invisivel")
-            }, 1800)
-            fadeIn(audio, 2000)
-        }, 100)
-    } else {
-        fadeIn(audio2, 2000)
-        container.classList.remove("invisivel")
-
-        circle.classList.add("circle")
-        circle.classList.add("circleGrow")
-        setTimeout(function() {
-            const div_tutorial = document.createElement("div")
-            div_tutorial.id = "tutorial"
-            div_tutorial.style.position = "absolute"
-            div_tutorial.style.top = "auto"
-            div_tutorial.style.left = "auto"
-            div_tutorial.style.width = "100%"
-            div_tutorial.style.height = "100%"
-            div_tutorial.style.zIndex = "999"
-        
-            const iframe = document.createElement("iframe")
-            iframe.style.position = "absolute"
-            iframe.style.top = "32%"
-            iframe.style.left = "auto"
-            iframe.style.width = "100%"
-            iframe.style.height = "100%"
-            iframe.style.zIndex = "999"
-            iframe.setAttribute("src", "../tutorial/index_tutorial.html")
-        
-            div_tutorial.appendChild(iframe)
-            circle.appendChild(div_tutorial)
-        }, 1800); // 1800 milissegundos
-    }
-})
-
-// Adiciona um ouvinte de eventos para mudanças no localStorage
-window.addEventListener('storage', function(event) {
-    if (event.storageArea === localStorage) {
-        console.log('Uma mudança foi detectada no localStorage!');
-        console.log('Chave:', event.key);
-        console.log('Novo valor:', event.newValue);
-        console.log('Antigo valor:', event.oldValue);
-        fadeOut(audio2, 1800)
-        this.setTimeout(function(){
-            window.location.reload();
-        }, 100)
-    }
-});
-
-function fadeOut(audioElement, duration) {
-    // Define o tamanho do passo de redução do volume
-    const step = 0.01;
-
-    // Calcula o intervalo de tempo entre cada ajuste de volume com base na duração desejada
-    const interval = duration / (1 / step);
-
-    // Inicia um intervalo que executa a função a cada 'interval' milissegundos
-    const fade = setInterval(() => {
-        // Verifica se o volume atual do elemento de áudio é maior que zero
-        if (audioElement.volume > 0) {
-            // Reduz gradualmente o volume do áudio pelo tamanho do passo
-            audioElement.volume = Math.max(0, audioElement.volume - step);
-        } else {
-            // Quando o volume chega a zero ou menos, limpa o intervalo para parar a função de fade out
-            clearInterval(fade);
-            
-            // Opcional: pausa o áudio quando o volume chega a zero
-            audioElement.pause();
-        }
-    }, interval);
-}
-
-function fadeIn(audioElement, duration, targetVolume = 1.0) {
-    // Define o volume inicial como 0 para começar o fade in
-    audioElement.volume = 0;
-    
-    // Garante que o áudio está tocando
-    audioElement.play();
-
-    // Define o tamanho do passo de aumento do volume
-    const step = 0.01;
-
-    // Calcula o intervalo de tempo entre cada ajuste de volume com base na duração desejada e no volume alvo
-    const interval = duration / (targetVolume / step);
-
-    // Inicia um intervalo que executa a função a cada 'interval' milissegundos
-    const fade = setInterval(() => {
-        // Verifica se o volume atual do elemento de áudio é menor que o volume alvo
-        if (audioElement.volume < targetVolume) {
-            // Aumenta gradualmente o volume do áudio pelo tamanho do passo até o volume alvo
-            audioElement.volume = Math.min(targetVolume, audioElement.volume + step);
-        } else {
-            // Quando o volume atinge o volume alvo, limpa o intervalo para parar a função de fade in
-            clearInterval(fade);
-        }
-    }, interval);
-}

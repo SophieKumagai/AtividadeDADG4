@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleq1.css">
-    <script src="./scriptq1.js" defer></script>
+    <link rel="stylesheet" href="styleq2.css">
+    <script src="scriptq2.js" defer></script>
     <title>PokeMongo</title>
 </head>
 
@@ -12,7 +12,6 @@
     <header class="header">
         <div class="logo"><img id="logo" src="../assets/logo.png" alt="Logo PokeMongo"></div>
         <div id="pokebola">
-            <p id="textVida">Suas vidas:</p>
             <img id="pokevida1" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida2" class="pokevida" src="../assets/pokebola.png" alt="">
             <img id="pokevida3" class="pokevida" src="../assets/pokebola.png" alt="">
@@ -37,25 +36,28 @@
             <div id="line1"></div>
             <div id="line2"></div>
         </div>
-        <div id="professor">
+        <div id´="professor">
             <div class="dialogBox">
-                <div id="box"><p class="fadeInText">um estudante veio ao laboratório e pediu para que você cadastrasse os pokemón que ele capturou em sua PC Box: <br><strong>“Diglett”, “terra”, “”, “0.8”, “0.2”</p></strong></div>
+                <div id="box"><p class="fadeInText">O treinador gostaria de ver as informações apenas do <br><strong>Bulbasaur</p></strong></div>
             </div>
             <img id="prof" src="../assets/profOAK.png" alt="Professor OAK">
             <alternativas>
                 <div class="alternativasDiv">
                     <div class="aTop">
-                        <div id="alternativa1" class="alternativa">db.pokemon.updateMany( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
-                        <div id="alternativa2" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa1" class="alternativa">db.pokemons.findOne({ nome: "Bulbasaur" })</div>
+                        <div id="alternativa1Selected"></div>
+                        <div id="alternativa2" class="alternativa">db.pokemon.findOne({ nome: "Bulbassaur" })</div>
+                        <div id="alternativa2Selected"></div>
                     </div>
                     <div class="aBottom">
-                        <div id="alternativa3" class="alternativa">db.pokemon.insertOne( { nome:"Diglett", tipo1:"terra", tipo2:"", altura:0.8, peso:0.2 } )</div>
-                        <div id="alternativa4" class="alternativa">db.pokemon.find( { nome:"Diglett", tipo1:"terra", tipo2:"", peso:0.8, altura:0.2 } )</div>
+                        <div id="alternativa3" class="alternativa">db.pokemon.findOne({ nome: "Bulbasaur" })</div>
+                        <div id="alternativa3Selected"></div>
+                        <div id="alternativa4" class="alternativa">db.pokemon.findOne({ nomes: "Bulbassaur" })</div>
+                        <div id="alternativa4Selected"></div>
                     </div>
                 </div>
             </alternativas>
         </div>
-
     </main>
     
     <footer id="rodape">
@@ -66,14 +68,6 @@
             <div id="btnVerify">Verificar</div>
         </div>
     </footer>
-
-    <div id="circle" class="container">
-        <div class="overlay"></div>
-        <div class="" id="circle_obj"></div>
-    </div>
-
-    <audio id="som" src="../assets/batalha.mp3"></audio>
-    <audio id="som2" src="../assets/home.mp3"></audio>
 </body>
 
 </html>
