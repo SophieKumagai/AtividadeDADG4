@@ -12,6 +12,7 @@ const alternativa3Selected = document.getElementById("alternativa3Selected");
 
 const alternativa4 = document.getElementById("alternativa4");
 const alternativa4Selected = document.getElementById("alternativa4Selected");
+const returnText = document.getElementById("returnText");
 
 progressBar.classList.add("none");
 
@@ -451,6 +452,18 @@ btnVerify.addEventListener("click", () => {
       document.head.appendChild(style);
   
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
+      const btAvancar = document.getElementById("btnNext");
+      btAvancar.addEventListener("click", () => {
+        window.open("../exercicio_2/indexq2.html", "_self");
+      })
+
+      alternativa1.removeEventListener("click", () => {});
+      alternativa2.removeEventListener("click", () => {});
+      alternativa3.removeEventListener("click", () => {});
+      alternativa4.removeEventListener("click", () => {});
+
+      returnText.innerText = "Query Funcionou!!"
+
     }, 1000); // Tempo para a transição de opacidade
   } else {
     const alternativas = document.querySelectorAll(".alternativa");
@@ -940,9 +953,17 @@ btnVerify.addEventListener("click", () => {
 
       rodape.style.opacity = "1"; // Fazer o rodapé reaparecer
 
+      alternativa1.removeEventListener("click", () => {});
+      alternativa2.removeEventListener("click", () => {});
+      alternativa3.removeEventListener("click", () => {});
+      alternativa4.removeEventListener("click", () => {});
+
+      returnText.innerText = "Query Deu erro!!"
+
       btnNext.addEventListener("click", () => {
-        window.open("/exercicio_1/indexq1.html", "_self");
+        window.open("./indexq1.html", "_self");
       })
+
     }, 1000); // Tempo para a transição de opacidade
   }
 });
@@ -1011,4 +1032,3 @@ function selecaoDeAlternativas() {
 }
 
 selecaoDeAlternativas();
- 

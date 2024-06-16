@@ -346,3 +346,16 @@ strong {
 
   margin: 0 20px 20px 0;
 }
+
+#returnText {
+  /* Estilizando o texto */
+  color: #92c255;
+  align-content: center;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-left: 30px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 120%;
+  font-style: normal;
+}

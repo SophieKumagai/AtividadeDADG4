@@ -1,0 +1,27 @@
+body{
+    background-color: #131f24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 250%;
+    color: whitesmoke;
+    text-align: center;
+}
+
+img{
+    width: 30%;
+}
+
+h1{
+    color: whitesmoke;
+    font-size: 150%;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #31718d;
+}
